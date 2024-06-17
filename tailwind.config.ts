@@ -26,6 +26,21 @@ export default {
     },
     typography: typographyStyles,
     extend: {
+      colors: {
+        brand: {
+          '50': '#f1fafa',
+          '100': '#dbf0f2',
+          '200': '#bbe2e6',
+          '300': '#8cccd4',
+          '400': '#56adba',
+          '500': '#40a0b0',
+          '600': '#337787',
+          '700': '#2f616f',
+          '800': '#2d515d',
+          '900': '#294550',
+          '950': '#172c35',
+        },
+      },
       boxShadow: {
         glow: '0 0 4px rgb(0 0 0 / 0.1)',
       },
