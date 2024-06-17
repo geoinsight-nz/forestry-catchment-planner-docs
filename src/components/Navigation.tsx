@@ -236,8 +236,8 @@ export const navigation: Array<NavGroup> = [
       { title: 'Introduction', href: '/' },
       { title: 'Background', href: '/background' },
       { title: 'Regions', href: '/regions' },
-      { title: 'Errors', href: '/errors' },
-      { title: 'Webhooks', href: '/webhooks' },
+      { title: 'Plantation forests', href: '/plantation-forests' },
+      { title: 'Depositional zones', href: '/depositional-zones' },
     ],
   },
   {
@@ -274,10 +274,10 @@ export const navigation: Array<NavGroup> = [
     links: [
       { title: 'Quickstart', href: '/quickstart' },
       { title: 'Config', href: '/config' },
-      { title: 'Authentication', href: '/authentication' },
-      { title: 'Pagination', href: '/pagination' },
+      { title: 'Sharing', href: '/sharing' },
+      { title: 'Interface', href: '/interface' },
       { title: 'Errors', href: '/errors' },
-      { title: 'Webhooks', href: '/webhooks' },
+      { title: 'Layers', href: '/layers' },
     ],
   },
 ]
