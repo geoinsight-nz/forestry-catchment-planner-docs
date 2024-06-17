@@ -1,0 +1,22 @@
+export const metadata = {
+  title: 'Age class process',
+  description:
+    'Age class process offers fine-tuned JavaScript, Ruby, PHP, Python, and Go libraries to make your life easier and give you the best experience when consuming the API.',
+}
+
+export const sections = [
+  { title: 'North Island', id: 'north-island' },
+  { title: 'South Island', id: 'south-island' },
+]
+
+# Age class process
+
+The recommended way to interact with the Protocol API is by using one of our official SDKs. Today, Protocol offers fine-tuned JavaScript, Ruby, PHP, Python, and Go libraries to make your life easier and give you the best experience when consuming the API. {{ className: 'lead' }}
+
+## North Island
+
+The combined accuracy of the Gisborne and Hawkes Bay regions was 71% within a year, 83% within two and 87% within three, after post-processing was applied. Notably, the estimates based on harvest detection (Hansen V1.10 and Sentinel-2) were more accurate than the LiDAR-derived results. 92% of points estimated using Hansen or S2 were within a year, while this dropped to 41% for LiDAR, though 75% of LiDAR points were within three years. The split between the two sources was relatively even, with 59% using Hansen and Sentinel and 41% using LiDAR. 304 points were assessed, which can be viewed by using the North Island QC tool.
+
+## South Island
+
+The combined accuracy of the Nelson, Marlborough and Tasman regions was 86% within a year, 93% within two and 94% within three, after post-processing was applied. The improvement relative to the North Island results was due to the greater proportion of results that we estimated using Hansen and Sentinel-2 (which had a similarly higher degree of accuracy compared to the LiDAR-derived results as the North Island) which thus improved the overall accuracy. About 80% of the QC points were estimated with this data, while the remaining 20% were classified using LiDAR. This difference in proportions likely highlights the younger resource age in these regions, resulting in a greater number of features having a change post 2000 which was then captured by the satellite imagery based data sources 300 points were assessed, which can be viewed by using the South Island QC tool.

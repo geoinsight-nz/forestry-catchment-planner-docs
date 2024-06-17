@@ -1,10 +1,10 @@
 'use client'
 
-import { useRef } from 'react'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 import { AnimatePresence, motion, useIsPresent } from 'framer-motion'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useRef } from 'react'
 
 import { Button } from '@/components/Button'
 import { useIsInsideMobileNavigation } from '@/components/MobileNavigation'
@@ -231,25 +231,53 @@ function NavigationGroup({
 
 export const navigation: Array<NavGroup> = [
   {
-    title: 'Guides',
+    title: 'Science',
     links: [
       { title: 'Introduction', href: '/' },
-      { title: 'Quickstart', href: '/quickstart' },
-      { title: 'SDKs', href: '/sdks' },
-      { title: 'Authentication', href: '/authentication' },
-      { title: 'Pagination', href: '/pagination' },
+      { title: 'Background', href: '/background' },
+      { title: 'Regions', href: '/regions' },
       { title: 'Errors', href: '/errors' },
       { title: 'Webhooks', href: '/webhooks' },
     ],
   },
   {
-    title: 'Resources',
+    title: 'Methodology',
     links: [
-      { title: 'Contacts', href: '/contacts' },
-      { title: 'Conversations', href: '/conversations' },
-      { title: 'Messages', href: '/messages' },
-      { title: 'Groups', href: '/groups' },
-      { title: 'Attachments', href: '/attachments' },
+      { title: 'Age class process', href: '/age-class-process' },
+      { title: 'Clearfelling', href: '/clearfelling' },
+      { title: 'Window of vulnerability', href: '/wov' },
+      { title: 'Stream orders', href: '/stream-orders' },
+      {
+        title: 'Catchment Management Units',
+        href: '/catchment-management-units',
+      },
+      {
+        title: 'River Environment Classification',
+        href: '/rec',
+      },
+      {
+        title: 'Erosion susceptibility',
+        href: '/erosion-susceptibility',
+      },
+      {
+        title: 'Debris flow susceptibility',
+        href: '/debris-flow-susceptibility',
+      },
+      {
+        title: 'Hill Slope Units',
+        href: '/hill-slope-units',
+      },
+    ],
+  },
+  {
+    title: 'Tool',
+    links: [
+      { title: 'Quickstart', href: '/quickstart' },
+      { title: 'Config', href: '/config' },
+      { title: 'Authentication', href: '/authentication' },
+      { title: 'Pagination', href: '/pagination' },
+      { title: 'Errors', href: '/errors' },
+      { title: 'Webhooks', href: '/webhooks' },
     ],
   },
 ]
@@ -258,9 +286,9 @@ export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
       <ul role="list">
-        <TopLevelNavItem href="/">About</TopLevelNavItem>
-        <TopLevelNavItem href="#">Documentation</TopLevelNavItem>
-        <TopLevelNavItem href="#">Science</TopLevelNavItem>
+        <TopLevelNavItem href="/">Science</TopLevelNavItem>
+        <TopLevelNavItem href="#">Methodology</TopLevelNavItem>
+        <TopLevelNavItem href="#">Tool</TopLevelNavItem>
         {navigation.map((group, groupIndex) => (
           <NavigationGroup
             key={group.title}
