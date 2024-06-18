@@ -4,6 +4,7 @@ import glob from 'fast-glob'
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
 import { type Section } from '@/components/SectionProvider'
+import { Inter } from 'next/font/google'
 
 import '@/styles/tailwind.css'
 
@@ -13,6 +14,11 @@ export const metadata: Metadata = {
     default: 'Protocol API Reference',
   },
 }
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 export default async function RootLayout({
   children,
