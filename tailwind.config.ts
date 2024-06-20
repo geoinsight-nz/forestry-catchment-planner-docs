@@ -26,6 +26,9 @@ export default {
     },
     typography: typographyStyles,
     extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)'],
+      },
       colors: {
         brand: {
           '50': '#f1fafa',
