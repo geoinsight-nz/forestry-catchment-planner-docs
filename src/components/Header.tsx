@@ -1,16 +1,17 @@
-import { forwardRef } from 'react'
-import Link from 'next/link'
 import clsx from 'clsx'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import Link from 'next/link'
+import { forwardRef } from 'react'
 
 import { Button } from '@/components/Button'
 import {
   MobileNavigation,
   useIsInsideMobileNavigation,
+  useMobileNavigationStore,
 } from '@/components/MobileNavigation'
-import { useMobileNavigationStore } from '@/components/MobileNavigation'
 import { MobileSearch, Search } from '@/components/Search'
 import { ThemeToggle } from '@/components/ThemeToggle'
+import BrandIcon from './icons/BrandIcon'
 
 function TopLevelNavItem({
   href,
@@ -71,15 +72,21 @@ export const Header = forwardRef<
       <Search />
       <div className="flex items-center gap-5 lg:hidden">
         <MobileNavigation />
-        <Link href="/" aria-label="Home">
-          <h2 className="text-sm text-white h-6">Forestry Catchment Planner</h2>
+        <Link
+          href="/"
+          aria-label="Home"
+          className="h-6 text-sm text-black dark:text-white"
+        >
+            FCP
         </Link>
       </div>
       <div className="flex items-center gap-5">
         <nav className="hidden md:block">
           <ul role="list" className="flex items-center gap-8">
             <TopLevelNavItem href="/">Science</TopLevelNavItem>
-            <TopLevelNavItem href="/age-class-process">Methodology</TopLevelNavItem>
+            <TopLevelNavItem href="/age-class-process">
+              Methodology
+            </TopLevelNavItem>
             <TopLevelNavItem href="/quickstart">Tool</TopLevelNavItem>
           </ul>
         </nav>
