@@ -238,6 +238,7 @@ export const navigation: Array<NavGroup> = [
       { title: 'Regions', href: '/regions' },
       { title: 'Plantation forests', href: '/plantation-forests' },
       { title: 'Depositional zones', href: '/depositional-zones' },
+      { title: 'Glossary', href: '/glossary' },
     ],
   },
   {
