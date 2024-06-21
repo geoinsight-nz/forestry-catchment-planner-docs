@@ -57,9 +57,9 @@ const resources: Array<Resource> = [
     },
   },
   {
-    href: '/research',
-    name: 'Research',
-    description: 'Find links to further research material on the topic.',
+    href: '/references',
+    name: 'References',
+    description: 'Find links to further reference material on the topic.',
     icon: PaperClipIcon,
     pattern: {
       y: 32,
