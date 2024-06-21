@@ -1,41 +1,27 @@
 export const metadata = {
   title: 'Background',
   description:
-    'In this guide, we’ll look at how authentication works. Protocol offers two ways to authenticate your API requests: Basic authentication and OAuth2 with a token.',
+    'New Zealand plantation forests are a key factor in controlling erosion.',
 }
 
 # Background
 
-You'll need to authenticate your requests to access any of the endpoints in the Protocol API. In this guide, we'll look at how authentication works. Protocol offers two ways to authenticate your API requests: Basic authentication and OAuth2 with a token — OAuth2 is the recommended way. {{ className: 'lead' }}
+New Zealand's plantation forests are highly effectively at preventing soil erosion. Erosion damage avoided as a result of plantation forests is saves New Zealand nearly $1 billion annually. {{ className: 'lead' }}
 
-## Basic authentication
+## Planning
 
-With basic authentication, you use your username and password to authenticate your HTTP requests. Unless you have a very good reason, you probably shouldn't use basic auth. Here's how to authenticate using cURL:
+Local councils, landowners, and the forestry sector are working to enhance their management and mitigation of future environmental impacts. Central to this effort is the ambitions to improve access to vital information about forestry stand locations, recent harvest, and forthcoming harvesting schedules.
 
-```bash {{ title: 'Example request with basic auth' }}
-curl https://api.protocol.chat/v1/conversations \
-  -u username:password
-```
+## Mitigation
 
-Please don't commit your Protocol password to GitHub!
+The project aims to create an online spatial decision support tool to help visual forestry stand age data and predict risk profiles in catchments of different sizes. This involves visualising future intergenerational harvesting cycles, downstream risks, and the natural susceptibility of areas typically prone to erosion.
 
-## OAuth2 with bearer token
+## Approach
 
-The recommended way to authenticate with the Protocol API is by using OAuth2. When establishing a connection using OAuth2, you will need your access token — you will find it in the [Protocol dashboard](#) under API settings. Here's how to add the token to the request header using cURL:
-
-```bash {{ title: 'Example request with bearer token' }}
-curl https://api.protocol.chat/v1/conversations \
-  -H "Authorization: Bearer {token}"
-```
-
-Always keep your token safe and reset it if you suspect it has been compromised.
-
-## Using an SDK
-
-If you use one of our official SDKs, you won't have to worry about any of the above — fetch your access token from the [Protocol dashboard](#) under API settings, and the client library will take care of the rest. All the client libraries use OAuth2 behind the scenes.
+This approach aims to provide a comprehensive understanding of harvesting cycles on a catchment scale, which is essential for proactive environmental stewardship.
 
 <div className="not-prose">
   <Button href="/sdks" variant="text" arrow="right">
-    <>Check out our list of first-party SDKs</>
+    <>Read about our methodology</>
   </Button>
 </div>

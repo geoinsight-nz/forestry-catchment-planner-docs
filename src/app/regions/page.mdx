@@ -1,63 +1,51 @@
 export const metadata = {
-  title: 'Pagination',
+  title: 'Regions',
   description:
-    'In this guide, we will look at how to work with paginated responses when querying the Protocol API',
+    'The Forestry Catchment Planner initially targets five key regions within Aotearoa New Zealand.',
 }
 
-# Pagination
+# Regions
 
-In this guide, we will look at how to work with paginated responses when querying the Protocol API. By default, all responses limit results to ten. However, you can go as high as 100 by adding a `limit` parameter to your requests. If you are using one of the official Protocol API client libraries, you don't need to worry about pagination, as it's all being taken care of behind the scenes. {{ className: 'lead' }}
+The project initially targets five key regions: Te Tauihu (Tasman, Nelson, Marlborough), Te Matau-a-Māui (Hawkes Bay), and Tairāwhiti (Gisborne), with the goal of expanding deployment throughout Aotearoa. {{ className: 'lead' }}
 
-When an API response returns a list of objects, no matter the amount, pagination is supported. In paginated responses, objects are nested in a `data` attribute and have a `has_more` attribute that indicates whether you have reached the end of the last page. You can use the `starting_after` and `endding_before` query parameters to browse pages.
+Each region exposed particular challenges that our methodology would need to address, including but not limited to: {{ className: 'lead' }}
 
-## Example using cursors
+### Regional inconsistency
+There is an inconsistent picture of forest stand locations and ages across New Zealand’s regions.
+
+### Inaccessibility
+No simple way to interact with forestry data in the context of catchments and time.
+
+### Vulnerability of the whenua
+Even harder to quickly understand the vulnerability of the land forests were planted on.
+
+---
 
 <Row>
   <Col>
 
-    In this example, we request the page that starts after the conversation with id `s4WycXedwhQrEFuM`. As a result, we get a list of three conversations and can tell by the `has_more` attribute that we have reached the end of the resultset.
+    Regions
 
     <Properties>
-      <Property name="starting_after" type="string">
-        The last ID on the page you're currently on when you want to fetch the next page.
+      <Property name="Te Tai o Aorere" type="Tasman">
+        Tasman contains the oldest rocks of anywhere on New Zealand. It contains all the main terranes that make up New Zealand's basement. These basement rocks include Ultramafic rocks, such as Serpentine and Dunite, and valuable minerals, such as Gold.
       </Property>
-      <Property name="ending_before" type="string">
-        The first ID on the page you're currently on when you want to fetch the previous page.
+      <Property name="Whakatū" type="Nelson">
+        Nelson’s limestones, marbles, granites, mudstones and ultramafic rocks are geologically part of rock groups found west of the Alpine Fault. These are quite diverse and complex compared to the greywacke mountains of the Southern Alps, east of the fault. (Source: Te Ara).
       </Property>
-      <Property name="limit" type="integer">
-        Limit the number of items returned.
+      <Property name="Te Tauihu-o-te-waka" type="Marlborough">
+        North of the fault, Marlborough shares Nelson’s geology and landforms. It is mostly hill country, including the Richmond Range and the coastal valleys of the Rai, Pelorus, Kaituna and Tuamarina rivers. (Source: Te Ara).
+      </Property>
+      <Property name="Te Matau-a-Māui" type="Hawkes Bay">
+        The geology of the Napier-Hastings area is dominated by Late Quaternary alluvial and marine sediments forming the Heretaunga Plains. These overlie older Quaternary sediments that are exposed in lower hills and these in turn overlie Pliocene alternating mudstone, sandstone and limestone. (Source: GNS Science).
+      </Property>
+      <Property name="Tairāwhiti" type="Gisborne">
+        North of the fault, Marlborough shares Nelson’s geology and landforms. It is mostly hill country, including the Richmond Range and the coastal valleys of the Rai, Pelorus, Kaituna and Tuamarina rivers. (Source: Te Ara).
       </Property>
     </Properties>
 
   </Col>
   <Col>
-
-    ```bash {{ title: 'Manual pagination using cURL' }}
-    curl -G https://api.protocol.chat/v1/conversations \
-      -H "Authorization: Bearer {token}" \
-      -d starting_after="s4WycXedwhQrEFuM" \
-      -d limit=10
-    ```
-
-    ```json {{ title: 'Paginated response' }}
-    {
-      "has_more": false,
-      "data": [
-        {
-          "id": "WAz8eIbvDR60rouK",
-          // ...
-        },
-        {
-          "id": "hSIhXBhNe8X1d8Et"
-          // ...
-        },
-        {
-          "id": "fbwYwpi9C2ybt6Yb"
-          // ...
-        }
-      ]
-    }
-    ```
 
   </Col>
 </Row>

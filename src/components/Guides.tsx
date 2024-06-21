@@ -3,26 +3,25 @@ import { Heading } from '@/components/Heading'
 
 const guides = [
   {
-    href: '/authentication',
-    name: 'Authentication',
-    description: 'Learn how to authenticate your API requests.',
+    href: '/background',
+    name: 'Background',
+    description: 'Learn about forestry and erosion in Aotearoa New Zealand.',
   },
   {
-    href: '/pagination',
-    name: 'Pagination',
-    description: 'Understand how to work with paginated responses.',
+    href: '/regions',
+    name: 'Regions',
+    description: 'Targeted regions with the goal of expanding.',
   },
   {
-    href: '/errors',
-    name: 'Errors',
+    href: '/plantation-forests',
+    name: 'Plantation forests',
+    description: 'Harvesting cycles in plantation forests.',
+  },
+  {
+    href: '/depositional-zones',
+    name: 'Depositional zones',
     description:
-      'Read about the different types of errors returned by the API.',
-  },
-  {
-    href: '/webhooks',
-    name: 'Webhooks',
-    description:
-      'Learn how to programmatically configure webhooks for your app.',
+      'Sensitive receiving environments downstream of plantation forests.',
   },
 ]
 

@@ -1,17 +1,23 @@
+import Image from 'next/image'
+import AgeClassProcess from './age_class_process.png'
+
 export const metadata = {
   title: 'Age class process',
   description:
-    'Age class process offers fine-tuned JavaScript, Ruby, PHP, Python, and Go libraries to make your life easier and give you the best experience when consuming the API.',
+    'Age class process detects forest stand age in order to predict when clearfell harvesting will happen at any time in the future.',
 }
 
 export const sections = [
   { title: 'North Island', id: 'north-island' },
   { title: 'South Island', id: 'south-island' },
+  { title: 'Output', id: 'output' },
 ]
 
 # Age class process
 
-The recommended way to interact with the Protocol API is by using one of our official SDKs. Today, Protocol offers fine-tuned JavaScript, Ruby, PHP, Python, and Go libraries to make your life easier and give you the best experience when consuming the API. {{ className: 'lead' }}
+The key difference between a plantation forest and an indigenous forest, at least in NZ, is that the plantation forest will be clearfelled once it is mature. For radiata pine plantations, this is done at an average age of 28 years, although this can be earlier or later depending on the forest owners' objectives. With reference to forestry harvesting cycles we can determine the age of the plantation with the aim of showing where clearfell harvesting is predicted to happen at any time in the future. In this way, we can show how much land will be in the window of vulnerability and where it will be located. {{ className: 'lead' }}
+
+<Image src={AgeClassProcess} alt="" width="100%" height="100%" />
 
 ## North Island
 
@@ -20,3 +26,7 @@ The combined accuracy of the Gisborne and Hawkes Bay regions was 71% within a ye
 ## South Island
 
 The combined accuracy of the Nelson, Marlborough and Tasman regions was 86% within a year, 93% within two and 94% within three, after post-processing was applied. The improvement relative to the North Island results was due to the greater proportion of results that we estimated using Hansen and Sentinel-2 (which had a similarly higher degree of accuracy compared to the LiDAR-derived results as the North Island) which thus improved the overall accuracy. About 80% of the QC points were estimated with this data, while the remaining 20% were classified using LiDAR. This difference in proportions likely highlights the younger resource age in these regions, resulting in a greater number of features having a change post 2000 which was then captured by the satellite imagery based data sources 300 points were assessed, which can be viewed by using the South Island QC tool.
+
+## Output
+
+An example of the final output for the South Island, showing the Sentinel-2 basemap and LCDB boundaries (post minimum area filter), then the initial processed dataset, and then the final version post smoothing. Of note are the recent plantings, which are generally captured with Hansen and Sentinel-2, and the earlier, pre-2000 areas which were estimated using LiDAR. Where there are clear edges between harvest and remaining mature forest, the internal boundaries can be quite accurate despite the generalization and smoothing processes that were applied.

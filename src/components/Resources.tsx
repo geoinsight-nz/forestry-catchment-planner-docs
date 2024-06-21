@@ -10,8 +10,9 @@ import {
 
 import { GridPattern } from '@/components/GridPattern'
 import { Heading } from '@/components/Heading'
-import { ChatBubbleIcon } from '@/components/icons/ChatBubbleIcon'
+import { ClipboardIcon } from '@/components/icons/ClipboardIcon'
 import { EnvelopeIcon } from '@/components/icons/EnvelopeIcon'
+import { PaperClipIcon } from '@/components/icons/PaperClipIcon'
 import { UserIcon } from '@/components/icons/UserIcon'
 import { UsersIcon } from '@/components/icons/UsersIcon'
 
@@ -28,11 +29,11 @@ interface Resource {
 
 const resources: Array<Resource> = [
   {
-    href: '/contacts',
-    name: 'Contacts',
+    href: 'mailto:info@geoinsight.co.nz',
+    name: 'Contact',
     description:
-      'Learn about the contact model and how to create, retrieve, update, delete, and list contacts.',
-    icon: UserIcon,
+      'Contact GeoInsight with feedback or questions about the web application tool.',
+    icon: EnvelopeIcon,
     pattern: {
       y: 16,
       squares: [
@@ -42,11 +43,11 @@ const resources: Array<Resource> = [
     },
   },
   {
-    href: '/conversations',
-    name: 'Conversations',
+    href: '/glossary',
+    name: 'Glossary',
     description:
-      'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
-    icon: ChatBubbleIcon,
+      'Refer to the glossary for definitions of commonly used terms.',
+    icon: ClipboardIcon,
     pattern: {
       y: -6,
       squares: [
@@ -56,11 +57,10 @@ const resources: Array<Resource> = [
     },
   },
   {
-    href: '/messages',
-    name: 'Messages',
-    description:
-      'Learn about the message model and how to create, retrieve, update, delete, and list messages.',
-    icon: EnvelopeIcon,
+    href: '/references',
+    name: 'References',
+    description: 'Find links to further reference material on the topic.',
+    icon: PaperClipIcon,
     pattern: {
       y: 32,
       squares: [
@@ -70,10 +70,9 @@ const resources: Array<Resource> = [
     },
   },
   {
-    href: '/groups',
-    name: 'Groups',
-    description:
-      'Learn about the group model and how to create, retrieve, update, delete, and list groups.',
+    href: '/partners',
+    name: 'Partners',
+    description: 'Access links to the parties involved in the project.',
     icon: UsersIcon,
     pattern: {
       y: 22,
@@ -84,8 +83,8 @@ const resources: Array<Resource> = [
 
 function ResourceIcon({ icon: Icon }: { icon: Resource['icon'] }) {
   return (
-    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-zinc-900/5 ring-1 ring-zinc-900/25 backdrop-blur-[2px] transition duration-300 group-hover:bg-white/50 group-hover:ring-zinc-900/25 dark:bg-white/7.5 dark:ring-white/15 dark:group-hover:bg-emerald-300/10 dark:group-hover:ring-emerald-400">
-      <Icon className="h-5 w-5 fill-zinc-700/10 stroke-zinc-700 transition-colors duration-300 group-hover:stroke-zinc-900 dark:fill-white/10 dark:stroke-zinc-400 dark:group-hover:fill-emerald-300/10 dark:group-hover:stroke-emerald-400" />
+    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-zinc-900/5 ring-1 ring-zinc-900/25 backdrop-blur-[2px] transition duration-300 group-hover:bg-white/50 group-hover:ring-zinc-900/25 dark:bg-white/7.5 dark:ring-white/15 dark:group-hover:bg-brand-300/10 dark:group-hover:ring-brand-400">
+      <Icon className="h-5 w-5 fill-zinc-700/10 stroke-zinc-700 transition-colors duration-300 group-hover:stroke-zinc-900 dark:fill-white/10 dark:stroke-zinc-400 dark:group-hover:fill-brand-300/10 dark:group-hover:stroke-brand-400" />
     </div>
   )
 }
@@ -113,7 +112,7 @@ function ResourcePattern({
         />
       </div>
       <motion.div
-        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#D7EDEA] to-[#F4FBDF] opacity-0 transition duration-300 group-hover:opacity-100 dark:from-[#202D2E] dark:to-[#303428]"
+        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#D7EDEA] to-[#dff6fb] opacity-0 transition duration-300 group-hover:opacity-100 dark:from-[#202D2E] dark:to-[#283434]"
         style={style}
       />
       <motion.div
