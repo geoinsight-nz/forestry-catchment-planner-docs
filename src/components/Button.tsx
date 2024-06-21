@@ -32,6 +32,7 @@ type ButtonProps = {
 } & (
   | React.ComponentPropsWithoutRef<typeof Link>
   | (React.ComponentPropsWithoutRef<'button'> & { href?: undefined })
+  | (React.ComponentPropsWithoutRef<'a'> & { href: string })
 )
 
 export function Button({
@@ -71,6 +72,17 @@ export function Button({
       <button className={className} {...props}>
         {inner}
       </button>
+    )
+  }
+
+  if (
+    typeof props.href === 'string' &&
+    (props.href.startsWith('http') || props.href.startsWith('mailto'))
+  ) {
+    return (
+      <a className={className} href={props.href} target='_blank' rel='noreferrer'>
+        {inner}
+      </a>
     )
   }
 
