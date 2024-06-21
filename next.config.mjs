@@ -17,6 +17,7 @@ const withMDX = nextMDX({
 const nextConfig = {
   output: 'export',
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
+  images: { unoptimized: true, domains: ['github.com'] },
 }
 
 export default withSearch(withMDX(nextConfig))

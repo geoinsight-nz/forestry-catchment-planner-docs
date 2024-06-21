@@ -237,6 +237,7 @@ export const navigation: Array<NavGroup> = [
       { title: 'Background', href: '/background' },
       { title: 'Regions', href: '/regions' },
       { title: 'Plantation forests', href: '/plantation-forests' },
+      { title: 'Age class process', href: '/age-class-process' },
       { title: 'Depositional zones', href: '/depositional-zones' },
       { title: 'Glossary', href: '/glossary' },
       { title: 'References', href: '/references' },
@@ -246,7 +247,6 @@ export const navigation: Array<NavGroup> = [
   {
     title: 'Methodology',
     links: [
-      { title: 'Age class process', href: '/age-class-process' },
       { title: 'Clearfelling', href: '/clearfelling' },
       { title: 'Window of vulnerability', href: '/wov' },
       { title: 'Stream orders', href: '/stream-orders' },
