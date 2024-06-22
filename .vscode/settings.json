@@ -3,6 +3,7 @@
         "en_GB"
     ],
     "spellright.documentTypes": [
-        "markdown"
+        "markdown",
+        "plaintext"
     ]
 }

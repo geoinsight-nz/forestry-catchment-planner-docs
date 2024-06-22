@@ -1,6 +1,10 @@
 import Image, { ImageProps } from 'next/image'
 
-export function Figure(props: ImageProps) {
+type FigureProps = {
+  caption: string  
+} & ImageProps
+
+export function Figure(props: FigureProps) {
   return (
     <figure className="relative">
       <Image
@@ -12,6 +16,9 @@ export function Figure(props: ImageProps) {
         {...props}
         alt={props.alt || ''}
       />
+      <figcaption className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+        {props.caption}
+      </figcaption>
     </figure>
   )
 }
