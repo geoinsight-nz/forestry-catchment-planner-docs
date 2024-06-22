@@ -10,8 +10,6 @@ export function Figure(props: FigureProps) {
       <Image
         sizes="100vw"
         className="h-auto w-full max-w-[28rem]"
-        width={600}
-        height={400}
         placeholder="blur"
         {...props}
         alt={props.alt || ''}
