@@ -61,5 +61,5 @@ export default {
       },
     },
   },
-  plugins: [typographyPlugin, headlessuiPlugin],
+  plugins: [require("tailwindcss-animate"), typographyPlugin, headlessuiPlugin, ],
 } satisfies Config
