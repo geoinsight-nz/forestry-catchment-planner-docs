@@ -8,6 +8,7 @@ export function Figure(props: ImageProps) {
         className="h-auto w-full max-w-[28rem]"
         width={600}
         height={400}
+        placeholder="blur"
         {...props}
         alt={props.alt || ''}
       />
