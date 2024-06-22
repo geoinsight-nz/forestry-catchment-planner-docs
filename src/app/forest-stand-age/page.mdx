@@ -1,0 +1,49 @@
+import { Gallery } from '@/components/Gallery'
+import Before from './map_graph_assets_before.png'
+import After from './map_graph_assets_after.png'
+import Detection from './map_graph_assets_harvest_detection.png'
+
+export const metadata = {
+  title: 'Forest stand age',
+  description:
+    'Stand age analysis can assist in analysis of the relationship between harvesting cycles and erosion hazard profiles.',
+}
+
+export const sections = [
+  { title: 'Classification', id: 'classification' },
+  { title: 'Detection', id: 'detection' },
+]
+
+# Forest stand age
+
+## Classification
+
+Radiata pine forest stand age is classified according to the following schema:
+
+-
+-
+-
+
+## Detection
+
+The North and South Island regions' datasets were primarily based on LCDB V5.0, supplemented with missing areas identified through the NZ Topo 1:50k Exotic Forest dataset, ensuring a minimum contiguous feature size of 3 hectares. The age classing process utilized LiDAR for base predictions, Hansen’s Global deforestation data for accuracy in overlaps, and LUCAS NZ Forest Clearing data for gaps, with assessments done using Sentinel-2 image time series analysis. Final refinements included grouping LiDAR results into three-year buckets, smoothing internal boundaries, and applying 2023 regional boundaries, ensuring a minimum internal feature size of 1.5 hectares.
+
+<Gallery
+  images={[
+    {
+      src: Before,
+      alt: 'Before',
+      caption: 'Before harvesting.',
+    },
+    {
+      src: After,
+      alt: 'After',
+      caption: 'After clearfelling.',
+    },
+    {
+      src: Detection,
+      alt: 'Detection',
+      caption: 'Detection of harvest.',
+    },
+  ]}
+/>
