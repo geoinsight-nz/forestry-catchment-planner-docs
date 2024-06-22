@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Skeleton } from '@/components/ui/skeleton'
 import { cn } from '@/lib/utils'
 
-interface ImageWithSkeletonProps {
+type ImageWithSkeletonProps = {
   src: string
   alt: string
   className?: string
@@ -22,13 +22,13 @@ const ImageWithSkeleton: React.FC<ImageWithSkeletonProps> = ({
   return (
     <div className={cn('relative', className)}>
       {isLoading && (
-        <Skeleton className="absolute inset-0 h-full w-full rounded" />
+        <Skeleton className="absolute inset-0 h-full w-full rounded-sm" />
       )}
       <img
         src={src}
         alt={alt}
         onLoad={handleImageLoad}
-        className={cn('h-full w-full rounded object-cover', {
+        className={cn('h-full w-full rounded-sm object-cover', {
           hidden: isLoading,
         })}
       />
