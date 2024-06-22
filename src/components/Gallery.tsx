@@ -16,8 +16,8 @@ export function Gallery({ images }: GalleryProps) {
           <Image
             src={image.src}
             alt={image.alt}
-            width={image.src.width}
-            height={image.src.height}
+            width={400}
+            height={400}
             placeholder="blur"
             className="rounded-lg"
           />
