@@ -1,9 +1,12 @@
-import React from 'react'
+import Image, { ImageProps } from 'next/image'
 
-export default function Figure() {
+export default function Figure(props: ImageProps) {
   return (
-    <div>
-      
-    </div>
+    <Image
+      sizes="100vw"
+      className="h-auto w-full"
+      {...props}
+      alt={props.alt || ''}
+    />
   )
 }
