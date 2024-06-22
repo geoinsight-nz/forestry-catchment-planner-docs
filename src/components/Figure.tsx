@@ -5,7 +5,7 @@ export function Figure(props: ImageProps, caption?: string) {
     <figure className="relative">
       <Image
         sizes="100vw"
-        className="h-auto w-full"
+        className="h-auto w-full max-w-[28rem]"
         width={600}
         height={400}
         {...props}
