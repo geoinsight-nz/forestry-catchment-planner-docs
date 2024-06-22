@@ -283,6 +283,14 @@ export const navigation: Array<NavGroup> = [
       { title: 'Layers', href: '/layers' },
     ],
   },
+  {
+    title: 'Data',
+    links: [
+      { title: 'Forestry stand calculations', href: '/forestry-stand-calculations-data' },
+      { title: 'Hillslope Management Units', href: '/hillslope-management-units-data' },
+      { title: 'Catchment Management Units', href: '/catchment-management-units-data' },
+    ],
+  },
 ]
 
 export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {
