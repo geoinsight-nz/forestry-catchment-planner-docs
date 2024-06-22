@@ -1,6 +1,6 @@
 # Forestry Catchment Planner Documentation
 
-The FCP documentation uses Protocol from [Tailwind UI](https://tailwindui.com), a template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
+The FCP documentation uses Protocol from [Tailwind UI](https://tailwindui.com) built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
 
 ## Getting started
 
