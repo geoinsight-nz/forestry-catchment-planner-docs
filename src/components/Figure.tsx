@@ -1,7 +1,7 @@
 import Image, { ImageProps } from 'next/image'
 
 type FigureProps = {
-  caption: string  
+  caption?: string
 } & ImageProps
 
 export function Figure(props: FigureProps) {
@@ -10,15 +10,18 @@ export function Figure(props: FigureProps) {
       <Image
         sizes="100vw"
         className="h-auto w-full max-w-[28rem]"
-        width={600}
-        height={400}
+        width={props.src.width}
+        height={props.src.height}
         placeholder="blur"
+        blurDataURL={props.src.blurDataURL}
         {...props}
         alt={props.alt || ''}
       />
-      <figcaption className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        {props.caption}
-      </figcaption>
+      {props.caption && (
+        <figcaption className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+          {props.caption}
+        </figcaption>
+      )}
     </figure>
   )
 }
