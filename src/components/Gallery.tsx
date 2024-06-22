@@ -12,7 +12,7 @@ export function Gallery({ images }: GalleryProps) {
   return (
     <div className="flex flex-wrap gap-x-4">
       {images.map((image, index) => (
-        <figure key={index} className="relative flex flex-col items-start">
+        <figure key={index} className="relative flex flex-col items-start max-w-60">
           <Image
             src={image.src}
             alt={image.alt}
