@@ -11,7 +11,11 @@ export function Figure(props: ImageProps, caption?: string) {
         {...props}
         alt={props.alt || ''}
       />
-      {caption && <figcaption>{caption}</figcaption>}
+      {caption && (
+        <figcaption className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+          {caption}
+        </figcaption>
+      )}
     </figure>
   )
 }
