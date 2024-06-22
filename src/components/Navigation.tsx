@@ -249,12 +249,11 @@ export const navigation: Array<NavGroup> = [
     links: [
       { title: 'Age class process', href: '/age-class-process' },
       { title: 'Clearfelling', href: '/clearfelling' },
-      { title: 'Window of vulnerability', href: '/wov' },
-      { title: 'Stream orders', href: '/stream-orders' },
       {
         title: 'Catchment Management Units',
         href: '/catchment-management-units',
       },
+      { title: 'Stream orders', href: '/stream-orders' },
       {
         title: 'River Environment Classification',
         href: '/rec',

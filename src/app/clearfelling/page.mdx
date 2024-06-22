@@ -1,394 +1,43 @@
+import { Figure } from '@/components/Figure'
+import wov from './wov.png'
+
 export const metadata = {
-  title: 'Contacts',
+  title: 'Clearfelling',
   description:
-    'On this page, we’ll dive into the different contact endpoints you can use to manage contacts programmatically.',
+    'Clear felling is the most common type of harvesting in New Zealand and involves cutting down an entire stand of trees.',
 }
 
-# Contacts
+# Clearfelling
 
-As the name suggests, contacts are a core part of Protocol — the very reason Protocol exists is so you can have secure conversations with your contacts. On this page, we'll dive into the different contact endpoints you can use to manage contacts programmatically. We'll look at how to query, create, update, and delete contacts. {{ className: 'lead' }}
+Clear felling is the most common type of harvesting in New Zealand and involves cutting down an entire stand of trees. Trees are extracted using methods suited to the land, access, forest size and the surrounding environment. Many clear-fell operations take place on steep terrain, where cable hauling is the most common extraction method used. {{ className: 'lead' }}
 
-## The contact model
+<Note>
+    Why does clearfell harvesting create a “window of vulnerability”?
+</Note>
 
-The contact model contains all the information about your contacts, such as their username, avatar, and phone number. It also contains a reference to the conversation between you and the contact and information about when they were last active on Protocol.
+## Window of vulnerability
 
-### Properties
+Any forest cover, indigenous or exotic plantation, reduces soil erosion on steep, erosion-susceptible lands due to: 
 
-<Properties>
-  <Property name="id" type="string">
-    Unique identifier for the contact.
-  </Property>
-  <Property name="username" type="string">
-    The username for the contact.
-  </Property>
-  <Property name="phone_number" type="string">
-    The phone number for the contact.
-  </Property>
-  <Property name="avatar_url" type="string">
-    The avatar image URL for the contact.
-  </Property>
-  <Property name="display_name" type="string">
-    The contact display name in the contact list. By default, this is just the
-    username.
-  </Property>
-  <Property name="conversation_id" type="string">
-    Unique identifier for the conversation associated with the contact.
-  </Property>
-  <Property name="last_active_at" type="timestamp">
-    Timestamp of when the contact was last active on the platform.
-  </Property>
-  <Property name="created_at" type="timestamp">
-    Timestamp of when the contact was created.
-  </Property>
-</Properties>
+- The soil reinforcing effect of the forest’s root network (“root reinforcement”).  Compared with pasture and other short vegetation, forests have deep woody roots that help to bind soils together and anchor them to the underlying rock formation.
+- Forest soils are generally drier and therefore stronger than soils under short vegetation such as pastures. This is due to the “umbrella effect”— tall rough forest canopies intercept more rainfall and allow less “throughfall” than short vegetation cover, such as pastures.  In addition, the forest canopy and litter layer can protect soils from damage by rainfall and water running over the surface of the soil.
 
----
+However, Marden (2004) noted that reductions in erosion depend on the size and spacing of the trees in the forest—they are least during forest establishment when trees are small and increase with stand age due to increasing volume of tree roots and canopy cover.  This process is shown by Figure 1.    In Figure 1, the decay curve for net root reinforcement after harvesting is because the harvesting of the mature trees also kills their roots and they begin to decay (the exceptions are “coppicing” species such as redwoods and some hardwoods, where the roots and stump remain alive after the stem is harvested, and fresh shoots grow from the stump.)
 
-## List all contacts {{ tag: 'GET', label: '/v1/contacts' }}
+Radiata pine roots decay quite rapidly after the tree is cut down, and as they do so their reinforcement effect declines to zero.   The replanted trees take time to grow enough roots to fully occupy and reinforce the soil and this results in a period of reduced root reinforcement of between 6-8 years post-harvest, depending on the initial spacing and growth of the replanted tree crop.
 
-<Row>
-  <Col>
+At the same time, the “umbrella effect” from the tree canopy is also lost due to harvesting and takes time to recover as the young tree crowns grow larger and begin to cover the site.
 
-    This endpoint allows you to retrieve a paginated list of all your contacts. By default, a maximum of ten contacts are shown per page.
+<Figure src={wov} />
 
-    ### Optional attributes
+Figure 1. Typical changes in forest vegetation root strength or root reinforcement after timber harvesting showing the ‘window of vulnerability’, estimated to be in the period 1-6 years after harvesting, but this is species and density dependent. Source: Phillips et al. (2024).
 
-    <Properties>
-      <Property name="limit" type="integer">
-        Limit the number of contacts returned.
-      </Property>
-    </Properties>
+## Visualising the window of vulnerability
 
-  </Col>
-  <Col sticky>
+<Note>
+    Where and when does the window of vulnerability occur?
+</Note>
 
-    <CodeGroup title="Request" tag="GET" label="/v1/contacts">
+Foresters usually harvest forests when they reach the age of 25-30 years, so if you know the current age of a plantation forest, it is possible to predict when it will be harvested.  The FCP uses region-wide maps of plantation forest ages (developed by Indufor, a forestry information consulting firm) to predict where and when clearfell harvesting is likely to happen.  
 
-    ```bash {{ title: 'cURL' }}
-    curl -G https://api.protocol.chat/v1/contacts \
-      -H "Authorization: Bearer {token}" \
-      -d active=true \
-      -d limit=10
-    ```
-
-    ```js
-    import ApiClient from '@example/protocol-api'
-
-    const client = new ApiClient(token)
-
-    await client.contacts.list()
-    ```
-
-    ```python
-    from protocol_api import ApiClient
-
-    client = ApiClient(token)
-
-    client.contacts.list()
-    ```
-
-    ```php
-    $client = new \Protocol\ApiClient($token);
-
-    $client->contacts->list();
-    ```
-
-    </CodeGroup>
-
-    ```json {{ title: 'Response' }}
-    {
-      "has_more": false,
-      "data": [
-        {
-          "id": "WAz8eIbvDR60rouK",
-          "username": "FrankMcCallister",
-          "phone_number": "1-800-759-3000",
-          "avatar_url": "https://assets.protocol.chat/avatars/frank.jpg",
-          "display_name": null,
-          "conversation_id": "xgQQXg3hrtjh7AvZ",
-          "last_active_at": 705103200,
-          "created_at": 692233200
-        },
-        {
-          "id": "hSIhXBhNe8X1d8Et"
-          // ...
-        }
-      ]
-    }
-    ```
-
-  </Col>
-</Row>
-
----
-
-## Create a contact {{ tag: 'POST', label: '/v1/contacts' }}
-
-<Row>
-  <Col>
-
-    This endpoint allows you to add a new contact to your contact list in Protocol. To add a contact, you must provide their Protocol username and phone number.
-
-    ### Required attributes
-
-    <Properties>
-      <Property name="username" type="string">
-        The username for the contact.
-      </Property>
-      <Property name="phone_number" type="string">
-        The phone number for the contact.
-      </Property>
-    </Properties>
-
-    ### Optional attributes
-
-    <Properties>
-      <Property name="avatar_url" type="string">
-        The avatar image URL for the contact.
-      </Property>
-      <Property name="display_name" type="string">
-        The contact display name in the contact list. By default, this is just the username.
-      </Property>
-    </Properties>
-
-  </Col>
-  <Col sticky>
-
-    <CodeGroup title="Request" tag="POST" label="/v1/contacts">
-
-    ```bash {{ title: 'cURL' }}
-    curl https://api.protocol.chat/v1/contacts \
-      -H "Authorization: Bearer {token}" \
-      -d username="FrankMcCallister" \
-      -d phone_number="1-800-759-3000" \
-      -d avatar_url="https://assets.protocol.chat/avatars/frank.jpg"
-    ```
-
-    ```js
-    import ApiClient from '@example/protocol-api'
-
-    const client = new ApiClient(token)
-
-    await client.contacts.create({
-      username: 'FrankMcCallister',
-      phone_number: '1-800-759-3000',
-      avatar_url: 'https://assets.protocol.chat/avatars/frank.jpg',
-    })
-    ```
-
-    ```python
-    from protocol_api import ApiClient
-
-    client = ApiClient(token)
-
-    client.contacts.create(
-      username="FrankMcCallister",
-      phone_number="1-800-759-3000",
-      avatar_url="https://assets.protocol.chat/avatars/frank.jpg",
-    )
-    ```
-
-    ```php
-    $client = new \Protocol\ApiClient($token);
-
-    $client->contacts->create([
-      'username' => 'FrankMcCallister',
-      'phone_number' => '1-800-759-3000',
-      'avatar_url' => 'https://assets.protocol.chat/avatars/frank.jpg',
-    ]);
-    ```
-
-    </CodeGroup>
-
-    ```json {{ title: 'Response' }}
-    {
-      "id": "WAz8eIbvDR60rouK",
-      "username": "FrankMcCallister",
-      "phone_number": "1-800-759-3000",
-      "avatar_url": "https://assets.protocol.chat/avatars/frank.jpg",
-      "display_name": null,
-      "conversation_id": "xgQQXg3hrtjh7AvZ",
-      "last_active_at": null,
-      "created_at": 692233200
-    }
-    ```
-
-  </Col>
-</Row>
-
----
-
-## Retrieve a contact {{ tag: 'GET', label: '/v1/contacts/:id' }}
-
-<Row>
-  <Col>
-
-    This endpoint allows you to retrieve a contact by providing their Protocol id. Refer to [the list](#the-contact-model) at the top of this page to see which properties are included with contact objects.
-
-  </Col>
-  <Col sticky>
-
-    <CodeGroup title="Request" tag="GET" label="/v1/contacts/WAz8eIbvDR60rouK">
-
-    ```bash {{ title: 'cURL' }}
-    curl https://api.protocol.chat/v1/contacts/WAz8eIbvDR60rouK \
-      -H "Authorization: Bearer {token}"
-    ```
-
-    ```js
-    import ApiClient from '@example/protocol-api'
-
-    const client = new ApiClient(token)
-
-    await client.contacts.get('WAz8eIbvDR60rouK')
-    ```
-
-    ```python
-    from protocol_api import ApiClient
-
-    client = ApiClient(token)
-
-    client.contacts.get("WAz8eIbvDR60rouK")
-    ```
-
-    ```php
-    $client = new \Protocol\ApiClient($token);
-
-    $client->contacts->get('WAz8eIbvDR60rouK');
-    ```
-
-    </CodeGroup>
-
-    ```json {{ title: 'Response' }}
-    {
-      "id": "WAz8eIbvDR60rouK",
-      "username": "FrankMcCallister",
-      "phone_number": "1-800-759-3000",
-      "avatar_url": "https://assets.protocol.chat/avatars/frank.jpg",
-      "display_name": null,
-      "conversation_id": "xgQQXg3hrtjh7AvZ",
-      "last_active_at": 705103200,
-      "created_at": 692233200
-    }
-    ```
-
-  </Col>
-</Row>
-
----
-
-## Update a contact {{ tag: 'PUT', label: '/v1/contacts/:id' }}
-
-<Row>
-  <Col>
-
-    This endpoint allows you to perform an update on a contact. Currently, the only attribute that can be updated on contacts is the `display_name` attribute which controls how a contact appears in your contact list in Protocol.
-
-    ### Optional attributes
-
-    <Properties>
-      <Property name="display_name" type="string">
-        The contact display name in the contact list. By default, this is just the username.
-      </Property>
-    </Properties>
-
-  </Col>
-  <Col sticky>
-
-    <CodeGroup title="Request" tag="PUT" label="/v1/contacts/WAz8eIbvDR60rouK">
-
-    ```bash {{ title: 'cURL' }}
-    curl -X PUT https://api.protocol.chat/v1/contacts/WAz8eIbvDR60rouK \
-      -H "Authorization: Bearer {token}" \
-      -d display_name="UncleFrank"
-    ```
-
-    ```js
-    import ApiClient from '@example/protocol-api'
-
-    const client = new ApiClient(token)
-
-    await client.contacts.update('WAz8eIbvDR60rouK', {
-        display_name: 'UncleFrank',
-    })
-    ```
-
-    ```python
-    from protocol_api import ApiClient
-
-    client = ApiClient(token)
-
-    client.contacts.update("WAz8eIbvDR60rouK", display_name="UncleFrank")
-    ```
-
-    ```php
-    $client = new \Protocol\ApiClient($token);
-
-    $client->contacts->update('WAz8eIbvDR60rouK', [
-      'display_name' => 'UncleFrank',
-    ]);
-    ```
-
-    </CodeGroup>
-
-    ```json {{ title: 'Response' }}
-    {
-      "id": "WAz8eIbvDR60rouK",
-      "username": "FrankMcCallister",
-      "phone_number": "1-800-759-3000",
-      "avatar_url": "https://assets.protocol.chat/avatars/frank.jpg",
-      "display_name": "UncleFrank",
-      "conversation_id": "xgQQXg3hrtjh7AvZ",
-      "last_active_at": 705103200,
-      "created_at": 692233200
-    }
-    ```
-
-  </Col>
-</Row>
-
----
-
-## Delete a contact {{ tag: 'DELETE', label: '/v1/contacts/:id' }}
-
-<Row>
-  <Col>
-
-    This endpoint allows you to delete contacts from your contact list in Protocol. Note: This will also delete your conversation with the given contact.
-
-  </Col>
-  <Col sticky>
-
-    <CodeGroup title="Request" tag="DELETE" label="/v1/contacts/WAz8eIbvDR60rouK">
-
-    ```bash {{ title: 'cURL' }}
-    curl -X DELETE https://api.protocol.chat/v1/contacts/WAz8eIbvDR60rouK \
-      -H "Authorization: Bearer {token}"
-    ```
-
-    ```js
-    import ApiClient from '@example/protocol-api'
-
-    const client = new ApiClient(token)
-
-    await client.contacts.delete('WAz8eIbvDR60rouK')
-    ```
-
-    ```python
-    from protocol_api import ApiClient
-
-    client = ApiClient(token)
-
-    client.contacts.delete("WAz8eIbvDR60rouK")
-    ```
-
-    ```php
-    $client = new \Protocol\ApiClient($token);
-
-    $client->contacts->delete('WAz8eIbvDR60rouK');
-    ```
-
-    </CodeGroup>
-
-  </Col>
-</Row>
+If we can predict where and when forest land will be in the window of vulnerability, we can use region-wide maps of erosion susceptibility (developed by GNS Science) to see if this land is highly erosion-susceptible, and therefore more likely to generate landslides and other erosion. So, we can visualise the future risk of sediment (from erosion) and harvesting slash reaching our rivers, by assessing the erosion susceptibility of the harvested land.
