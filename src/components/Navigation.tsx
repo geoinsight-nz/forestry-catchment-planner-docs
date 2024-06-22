@@ -237,7 +237,7 @@ export const navigation: Array<NavGroup> = [
       { title: 'Background', href: '/background' },
       { title: 'Regions', href: '/regions' },
       { title: 'Plantation forests', href: '/plantation-forests' },
-      { title: 'Age class process', href: '/age-class-process' },
+      { title: 'Stand age classification', href: '/stand-age-classification' },
       { title: 'Depositional zones', href: '/depositional-zones' },
       { title: 'Glossary', href: '/glossary' },
       { title: 'References', href: '/references' },
@@ -246,7 +246,8 @@ export const navigation: Array<NavGroup> = [
   },
   {
     title: 'Methodology',
-    links: [
+      links: [
+      { title: 'Age class process', href: '/age-class-process' },
       { title: 'Clearfelling', href: '/clearfelling' },
       { title: 'Window of vulnerability', href: '/wov' },
       { title: 'Stream orders', href: '/stream-orders' },
@@ -286,9 +287,18 @@ export const navigation: Array<NavGroup> = [
   {
     title: 'Data',
     links: [
-      { title: 'Forestry stand calculations', href: '/forestry-stand-calculations-data' },
-      { title: 'Hillslope Management Units', href: '/hillslope-management-units-data' },
-      { title: 'Catchment Management Units', href: '/catchment-management-units-data' },
+      {
+        title: 'Forestry stand calculations',
+        href: '/forestry-stand-calculations-data',
+      },
+      {
+        title: 'Hillslope Management Units',
+        href: '/hillslope-management-units-data',
+      },
+      {
+        title: 'Catchment Management Units',
+        href: '/catchment-management-units-data',
+      },
     ],
   },
 ]
