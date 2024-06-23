@@ -236,9 +236,6 @@ export const navigation: Array<NavGroup> = [
       { title: 'Introduction', href: '/' },
       { title: 'Background', href: '/background' },
       { title: 'Regions', href: '/regions' },
-      { title: 'Plantation forests', href: '/plantation-forests' },
-      { title: 'Forest stand age', href: '/forest-stand-age' },
-      { title: 'Depositional zones', href: '/depositional-zones' },
       { title: 'Glossary', href: '/glossary' },
       { title: 'Links', href: '/links' },
       { title: 'Partners', href: '/partners' },
@@ -247,8 +244,11 @@ export const navigation: Array<NavGroup> = [
   {
     title: 'Methodology',
     links: [
+      { title: 'Plantation forests', href: '/plantation-forests' },
+      { title: 'Forest stand age', href: '/forest-stand-age' },
       { title: 'Age class process', href: '/age-class-process' },
       { title: 'Clearfelling', href: '/clearfelling' },
+      { title: 'Depositional zones', href: '/depositional-zones' },
       {
         title: 'Catchment Management Units',
         href: '/catchment-management-units',
@@ -311,9 +311,11 @@ export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
       <ul role="list">
-        <TopLevelNavItem href="/">Science</TopLevelNavItem>
-        <TopLevelNavItem href="#">Methodology</TopLevelNavItem>
-        <TopLevelNavItem href="#">Tool</TopLevelNavItem>
+        <TopLevelNavItem href="/background">Science</TopLevelNavItem>
+        <TopLevelNavItem href="/plantation-forests">
+          Methodology
+        </TopLevelNavItem>
+        <TopLevelNavItem href="/interface">Tool</TopLevelNavItem>
         {navigation.map((group, groupIndex) => (
           <NavigationGroup
             key={group.title}
