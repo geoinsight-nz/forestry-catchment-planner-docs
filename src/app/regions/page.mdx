@@ -1,3 +1,6 @@
+import { Figure } from '@/components/Figure'
+import map from './nz_map_regions.jpg'
+
 export const metadata = {
   title: 'Regions',
   description:
@@ -44,6 +47,9 @@ Each region exposed particular challenges that our methodology was forced to add
     </Properties>
 
   </Col>
-  <Col>
+  <Col sticky>
+
+    <Figure src={map} alt="" caption=""/>
+
   </Col>
 </Row>
