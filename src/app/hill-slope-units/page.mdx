@@ -1,5 +1,5 @@
 import hsu from './hsu.png'
-import Figure from '@/components/Figure'
+import { Figure } from '@/components/Figure'
 
 export const metadata = {
   title: 'Hill Slope Units',
@@ -17,4 +17,10 @@ The average size of HSUs is 28 ha (but ranging from 1-450 ha) and were defined u
 
 Some REC2 watersheds occur on both sides of the river, these were split using the REC2 riverlines so that individual slope units were defined. Areas of flat land on floodplains, terraces or low fans were removed from the hillslope units. These areas of low slope were identified using data from the NZLRI and were clipped from the hillslope units so typically only slopes >8 degrees were included.
 
-<Figure src={} alt="" caption="Figure 4. Floodplains, hillslope units and CMU within the Wairoa catchment, shown in relation to the Regional  LiDAR hillshade model." />
+<Row>
+    <Col>
+        <Figure src={hsu} alt="" caption="Figure 4. Floodplains, hillslope units and CMU within the Wairoa catchment, shown in relation to the Regional  LiDAR hillshade model." />
+    </Col>
+    <Col>
+    </Col>
+</Row>

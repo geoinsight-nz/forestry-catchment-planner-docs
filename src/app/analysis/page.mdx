@@ -1,7 +1,9 @@
-import marlboroughSounds from './ril_2.png'
 import tolagaBay from './ril_1.png'
-import Gallery from '@/components/Gallery'
-import Figure from '@/components/Figure'
+import marlboroughSounds from './ril_2.png'
+import landslideSusceptibility from './landslide_susceptibility_hsu.png'
+
+import { Gallery } from '@/components/Gallery'
+import { Figure } from '@/components/Figure'
 
 export const metadata = {
   title: 'Analysis',
@@ -28,11 +30,17 @@ Erosion susceptibility was defined using the outputs from a prototype rainfall-i
             caption: '',
         },
     ]}
- />
+/>
 
- ***
- 
- <Figure src={} alt="" caption="Figure 6. Close up of categorised hillslope units in the Wairoa catchment" />
+***
+
+<Row>
+    <Col>
+        <Figure src={landslideSusceptibility} alt="" caption="Figure 6. Close up of categorised hillslope units in the Wairoa catchment" />
+    </Col>
+    <Col>
+    </Col>
+</Row>
 
 Two separate RIL models were used for this project because the regions are in different climate zones and have very different underlying rock types.  The Eastern NI model was trained using a database of 82,761 mapped landslides triggered by the 2011 Hawkes Bay storm (Jones et al. 2011) and 12,499 landslides triggered by the 2018 Tolaga Bay - Queens Birthday storm (Rosser et al. 2019). No RIL model currently exists for Marlborough/Nelson/Tasman regions, so a model developed for the West Coast (Leith et al. in prep) was applied to this region. The West Coast RIL model was developed using 1395 mapped landslides triggered by the March 2019 storm event (Wride & deVilder 2020) and 951 landslides triggered by the July 2021 storm event (unpublished GNS Science data).
 
