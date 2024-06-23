@@ -84,7 +84,7 @@ export const Header = forwardRef<
         <nav className="hidden md:block">
           <ul role="list" className="flex items-center gap-8">
             <TopLevelNavItem href="/">Science</TopLevelNavItem>
-            <TopLevelNavItem href="/age-class-process">
+            <TopLevelNavItem href="/plantation-forests">
               Methodology
             </TopLevelNavItem>
             <TopLevelNavItem href="/quickstart">Tool</TopLevelNavItem>
