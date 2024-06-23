@@ -1,0 +1,46 @@
+export const metadata = {
+  title: 'Analysis',
+  description:
+    'Analysis combining HSUs, CMUs and erosion susceptibility.',
+}
+
+# Analysis
+
+Combining HSUs, CMUs and erosion susceptibility. {{ className: 'lead' }}
+
+Erosion susceptibility was defined using the outputs from a prototype rainfall-induced landslide (RIL) prediction model developed by GNS Science (Massey et al. 2019). Massey et al. (2019) used a logistic regression model to create a landslide susceptibility model which was used to forecast the spatial distribution of rainfall-induced landslides in the study regions (see Appendix 1). Susceptibility models provide fundamental inputs to hazard analyses, as they describe the probability of landslide initiation at a given location (de Vilder and Massey, 2020). The output from the GNS RIL susceptibility model is a raster (or grid) showing the probability of a landslide occurring in a given pixel (32 x 32 m), when subject to a 100-year return interval rainfall event. In the FCP, these landslide probabilities were averaged for each hillslope unit, and categorised into 5 categories (very low, low, medium, high, very high) using the geometrical interval classification system in ArcGIS.
+
+Two separate RIL models were used for this project because the regions are in different climate zones and have very different underlying rock types.  The Eastern NI model was trained using a database of 82,761 mapped landslides triggered by the 2011 Hawkes Bay storm (Jones et al. 2011) and 12,499 landslides triggered by the 2018 Tolaga Bay - Queens Birthday storm (Rosser et al. 2019). No RIL model currently exists for Marlborough/Nelson/Tasman regions, so a model developed for the West Coast (Leith et al. in prep) was applied to this region. The West Coast RIL model was developed using 1395 mapped landslides triggered by the March 2019 storm event (Wride & deVilder 2020) and 951 landslides triggered by the July 2021 storm event (unpublished GNS Science data).
+
+Rainfall (24-hr max) and soil moisture grids (for the day before each storm event) from the Virtual Climate Station Network (VCSN, https://niwa.co.nz/climate-and-weather/virtual-climate-station-data-and-products ) were provided by NIWA.  This provided estimates of rainfall and soil moisture conditions when each landslide was triggered. By overlaying the landslide locations on various topographic and geophysical geospatial data layers, we also know the geophysical/topographic factors that control landslide susceptibility at each landslide site (see Massey et al. (2019) and Massey et al. (2021) for more details). To forecast landslide probabilities across the regions using consistent rainfall amounts, rainfall grids for 24-hour rainfall for 100-year ARI events from HIRDS (provided by NIWA - https://data-niwa.opendata.arcgis.com/datasets/hirds-v4-rainfall-depth-surfaces-new-zealand/explore) were used as the input rainfall for the RIL forecast models.  
+
+The current version of the GNS Rainfall Induced Landslide (RIL) susceptibility model uses Land Cover classes derived from the Land Cover Database version 5.0 as mapped in 2018 (LCDB v5, https://lris.scinfo.org.nz/layer/104400-lcdb-v50-land-cover-database-version-50-mainland-new-zealand/) as an input variable. The LCDB classes were grouped into three land cover categories for logistic regression modelling. The land cover classes are 1. Forest, 2. Scrub and Grassland, and 3. Bare ground (Table 1). The current version of the RIL susceptibility model does not differentiate between Forest and Forest – Harvested land cover categories (i.e. it does NOT include harvested areas). 
+
+Because the RIL susceptibility model does not differentiate between Exotic Forest and Forest–Harvested, to simulate harvest of the plantation forest, we replaced the Exotic Forest and Forest-Harvested land cover code with the pasture land cover code and re-ran the model. Evidence from Cyclone Gabrielle landslide mapping (Leith et al. 2023) in the Gisborne/Hawkes Bay region suggests that landslide densities in areas of harvested exotic forest (500.2 LS/km2) were similar to landslide densities on slopes with pasture land cover (457.1 LS/km2), and both were an order of magnitude greater than landslide densities on slopes under exotic forest (45.8 LS/km2) (Rosser & Leith 2024). 
+
+Erosion susceptibility was classified into 5 classes based on the predicted probability of a landslide occurring in a 100-year ARI rainfall event (Table 3). Separate classification systems were developed for the North Island and South Island study regions because the magnitude and scale of erosion is at least an order of magnitude greater for the North Island (especially East Cape north of Gisborne) than in the South Island. The East Cape region has some of the most highly erodible land in New Zealand (Phillips et al.2018; Page et al. 2007), and rivers draining this land have some of the highest annual sediment yields recorded globally (Hicks et al. 2000). In comparison, erosion rates and landslide densities recorded during storm events in the Marlborough/Nelson/Tasman regions, are typically an order of magnitude lower than those recorded in the Gisborne/Hawkes Bay regions. 
+
+The classification system was based on the Geometric Interval classification in ArcMap and was modified for both regions to reflect the distribution of erosion susceptibilities in the Erosion Susceptibility Classification (ESC) in the National Environmental Standard for Plantation Forestry (NES-PF) plantation forestry (MPI 2017).
+
+<Note>
+    Table 3. Landslide initiation probabilities used to define erosion susceptibility classes for North Island and South Island study regions.
+</Note>
+
+| Erosion susceptibility class | Gisborne/Hawke’s Bay | Marlborough/Nelson/Tasman  |
+|------------------------------|----------------------|----------------------------|
+| Low                          | < 0.028              | < 0.0002                   |
+| Moderate                     | 0.028 - 0.085        | 0.0002 - 0.0075            |
+| High                         | 0.085 - 0.201        | 0.0075 - 0.0015            |
+| Very high                    | 0.201 - 0.442        | 0.0015 - 0.079             |
+| Extreme                      | 0.442 - 0.9          | 0.079 - 0.1*               |
+
+*note there are no areas of extreme erosion susceptibility in the South Island study regions
+
+The prototype RIL susceptibility model is still undergoing development and improvements are planned for the future:
+
+1. RIL model is currently being trained for Marlborough using mapped landslides from the July 2021 and August 2022 storm events (Rosser et al. 2023). Currently the West Coast model is the best information available.
+2. Because the West Coast model is not specifically trained using landslides triggered on Separation Point Granites, these areas are not included in the current version of the tool – a separate erosion susceptibility overlay is needed for these areas.
+3. The RIL model is trained on shallow landslides and debris flows/slides triggered by individual storm events. Areas of crushed and sheared rock types in East Coast areas (typically associated with areas underlain by the East Coast Allochthon) and earthflow and gully erosion types which dominate in these rock types are also not included. This applies to areas of crushed lithologies in both Cretaceous (greywacke) and Neogene (mudstone/ siltstone/sandstone) rocks in the Gisborne region. 
+4. Areas of very high erosion susceptibility can be lost due to the averaging of erosion susceptibility across the hillslope units. This could be improved by creating smaller hillslope units which allow areas of high erosion susceptibility to be identified and mapped as separate units.  However, this was not possible given the time restrictions for the regional-scale assessment.
+
+Note that the erosion susceptibility values should be thought of as a guide only and should not take the place of site-specific geotechnical assessments. 

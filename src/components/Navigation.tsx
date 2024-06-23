@@ -263,12 +263,16 @@ export const navigation: Array<NavGroup> = [
         href: '/erosion-susceptibility',
       },
       {
-        title: 'Debris flow susceptibility',
-        href: '/debris-flow-susceptibility',
-      },
-      {
         title: 'Hill Slope Units',
         href: '/hill-slope-units',
+      },
+      {
+        title: 'Analysis',
+        href: '/analysis',
+      },
+      {
+        title: 'Melton ratio',
+        href: '/melton-ratio',
       },
     ],
   },
