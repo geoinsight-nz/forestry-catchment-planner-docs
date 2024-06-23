@@ -240,7 +240,7 @@ export const navigation: Array<NavGroup> = [
       { title: 'Forest stand age', href: '/forest-stand-age' },
       { title: 'Depositional zones', href: '/depositional-zones' },
       { title: 'Glossary', href: '/glossary' },
-      { title: 'References', href: '/references' },
+      { title: 'Links', href: '/links' },
       { title: 'Partners', href: '/partners' },
     ],
   },
@@ -263,12 +263,20 @@ export const navigation: Array<NavGroup> = [
         href: '/erosion-susceptibility',
       },
       {
-        title: 'Debris flow susceptibility',
-        href: '/debris-flow-susceptibility',
-      },
-      {
         title: 'Hill Slope Units',
         href: '/hill-slope-units',
+      },
+      {
+        title: 'Analysis',
+        href: '/analysis',
+      },
+      {
+        title: 'Melton ratio',
+        href: '/melton-ratio',
+      },
+      {
+        title: 'References',
+        href: '/references',
       },
     ],
   },

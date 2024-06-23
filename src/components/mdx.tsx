@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Feedback } from '@/components/Feedback'
 import { Heading } from '@/components/Heading'
 import { Prose } from '@/components/Prose'
+import { Children } from 'react'
 
 export const a = Link
 export { Button } from '@/components/Button'
@@ -65,6 +66,14 @@ export function Note({ children }: { children: React.ReactNode }) {
   )
 }
 
+export function Center({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex flex-nowrap items-center justify-center">
+      {children}
+    </div>
+  )
+}
+
 export function Row({ children }: { children: React.ReactNode }) {
   return (
     <div className="grid grid-cols-1 items-start gap-x-16 gap-y-10 xl:max-w-none xl:grid-cols-2">
@@ -90,6 +99,32 @@ export function Col({
       {children}
     </div>
   )
+}
+
+export function List({ children }: { children: React.ReactNode }) {
+  return (
+    <ul
+      role="list"
+      className="m-0 max-w-[calc(theme(maxWidth.lg)-theme(spacing.8))] list-none rounded-lg p-0 dark:ring-1 dark:ring-white/10"
+    >
+      {Children.map(children, (child, childIndex) => (
+        <li
+          className={clsx(
+            'm-0 flex items-center p-0 text-sm text-zinc-600 transition ui-not-focus-visible:outline-none dark:border-zinc-800 dark:text-zinc-400',
+            childIndex % 2 === 0
+              ? 'bg-zinc-100 dark:bg-transparent'
+              : 'bg-transparent dark:bg-white/2.5',
+          )}
+        >
+          {child}
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+export function ListItem({ children }: { children: React.ReactNode }) {
+  return <span className="h-fit w-full m-0 py-0 px-2">{children}</span>
 }
 
 export function Properties({ children }: { children: React.ReactNode }) {

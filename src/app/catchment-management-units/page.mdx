@@ -1,12 +1,12 @@
 export const metadata = {
   title: 'Catchment Management Units',
   description:
-    'On this page, we’ll dive into the different group endpoints you can use to manage groups programmatically.',
+    'Catchment Management Units are referred to as CMUs.',
 }
 
 # Catchment Management Units (CMUs)
 
-Catchment Management Units are referred to as CMUs.
+Catchment Management Units are referred to as CMUs. {{ className: 'lead' }}
 
 <Note>
     To identify CMUs, we used the River Environment Classification (REC2) from NIWA:
@@ -15,439 +15,42 @@ Catchment Management Units are referred to as CMUs.
 
 ## Catchments
 
-Worldwide, the accepted concept for managing river flows, erosion and sediment is the catchment, defined as an area where water (from precipitation, ice and snow melt or from beneath the ground) is collected by the natural landscape and flows through rivers, lakes and groundwater to the sea.  Figure 1 shows how catchments can be divided into three zones in terms of erosion sediment generation, transport and deposition.  New Zealand is a “land uplifted high” and it is the process of geological uplift and then downwards erosion in our steepland headwaters (Zone 1) that generates the majority of erosion sediment in our catchments.  This sediment is transported by floodwaters down to the “Transfer zone” (Zone 2) in our lowland hills.  Sediment in floodwaters may be temporarily deposited in Zone 2, but eventually it is picked up and transported through to Zone 3, the “Depositional zone”. Here sediment is laid down by floods and contributes to the slow building of wide, flat valleys and floodplains.
+Worldwide, the accepted concept for managing river flows, erosion and sediment is the catchment, defined as an area where water (from precipitation, ice and snow melt or from beneath the ground) is collected by the natural landscape and flows through rivers, lakes and groundwater to the sea.  Figure 1 shows how catchments can be divided into three zones in terms of erosion sediment generation, transport and deposition.  New Zealand is a “land uplifted high” and it is the process of geological uplift and then downwards erosion in our steepland headwaters (`Zone 1`) that generates the majority of erosion sediment in our catchments.  This sediment is transported by floodwaters down to the “Transfer zone” (`Zone 2`) in our lowland hills.  Sediment in floodwaters may be temporarily deposited in `Zone 2`, but eventually it is picked up and transported through to `Zone 3`, the “Depositional zone”. Here sediment is laid down by floods and contributes to the slow building of wide, flat valleys and floodplains.
 
-### Properties
+### Structure
 
-<Properties>
-  <Property name="id" type="string">
-    Unique identifier for the group.
-  </Property>
-  <Property name="name" type="string">
-    The name for the group.
-  </Property>
-  <Property name="description" type="string">
-    The description for the group.
-  </Property>
-  <Property name="avatar_url" type="string">
-    The avatar image URL for the group.
-  </Property>
-  <Property name="conversation_id" type="string">
-    Unique identifier for the conversation that belongs to the group.
-  </Property>
-  <Property name="contacts" type="array">
-    An array of contact objects that are members of the group.
-  </Property>
-  <Property name="created_at" type="timestamp">
-    Timestamp of when the group was created.
-  </Property>
-  <Property name="archived_at" type="timestamp">
-    Timestamp of when the group was archived.
-  </Property>
-</Properties>
+An important feature of catchments is that they usually have a structure like a tree.  This structure can be understood in terms of stream orders (Figure 2), where the smallest and highest subcatchments in `Zone 1` are classified stream order 1.  Downstream, where two order 1 streams meet is the beginning of a stream order 2; where two order 2 streams meet, is the beginning of an order 3 stream and so on.  By the time `Zone 3` (floodplains) is reached, the main stem of the catchment “tree” may be classified as order 5, 6 or even 7.
+
+<div className="not-prose mb-16 mt-6 flex gap-3">
+  <Button href="/stream-orders" arrow="right" variant="text">
+    <>Learn about stream orders in the next section</>
+  </Button>
+</div>
 
 ---
 
-## List all groups {{ tag: 'GET', label: '/v1/groups' }}
-
-<Row>
-  <Col>
-
-    This endpoint allows you to retrieve a paginated list of all your groups. By default, a maximum of ten groups are shown per page.
-
-    ### Optional attributes
-
-    <Properties>
-      <Property name="limit" type="integer">
-        Limit the number of groups returned.
-      </Property>
-      <Property name="archived" type="boolean">
-        Only show groups that are archived when set to `true`.
-      </Property>
-    </Properties>
-
-  </Col>
-  <Col sticky>
-
-    <CodeGroup title="Request" tag="GET" label="/v1/groups">
-
-    ```bash {{ title: 'cURL' }}
-    curl -G https://api.protocol.chat/v1/groups \
-      -H "Authorization: Bearer {token}" \
-      -d limit=10
-    ```
-
-    ```js
-    import ApiClient from '@example/protocol-api'
-
-    const client = new ApiClient(token)
-
-    await client.groups.list()
-    ```
-
-    ```python
-    from protocol_api import ApiClient
-
-    client = ApiClient(token)
-
-    client.groups.list()
-    ```
-
-    ```php
-    $client = new \Protocol\ApiClient($token);
-
-    $client->groups->list();
-    ```
-
-    </CodeGroup>
-
-    ```json {{ title: 'Response' }}
-    {
-      "has_more": false,
-      "data": [
-        {
-          "id": "l7cGNIBKZiNJ6wqF",
-          "name": "Plaza Hotel",
-          "description": "World-renowned.",
-          "avatar_url": "https://assets.protocol.chat/avatars/plazahotel.jpg",
-          "conversation_id": "ZYjVAbCE9g5XRlra",
-          "contacts": [
-            {
-              "username": "Hector"
-              // ...
-            },
-            {
-              "username": "Cedric"
-              // ...
-            },
-            {
-              "username": "Hester"
-              // ...
-            },
-            {
-              "username": "Cliff"
-              // ...
-            }
-          ],
-          "created_at": 692233200,
-          "archived_at": null
-        },
-        {
-          "id": "hSIhXBhNe8X1d8Et"
-          // ...
-        }
-      ]
-    }
-    ```
-
-  </Col>
-</Row>
-
----
-
-## Create a group {{ tag: 'POST', label: '/v1/groups' }}
-
-<Row>
-  <Col>
-
-    This endpoint allows you to create a new group conversation between you and a group of your Protocol contacts.
-
-    ### Required attributes
-
-    <Properties>
-      <Property name="name" type="string">
-        The name for the group.
-      </Property>
-    </Properties>
-
-    ### Optional attributes
-
-    <Properties>
-      <Property name="description" type="string">
-        The description for the group.
-      </Property>
-      <Property name="avatar_url" type="string">
-        The avatar image URL for the group.
-      </Property>
-      <Property name="contacts" type="array">
-        An array of contact objects that are members of the group.
-      </Property>
-    </Properties>
-
-  </Col>
-  <Col sticky>
-
-    <CodeGroup title="Request" tag="POST" label="/v1/groups">
-
-    ```bash {{ title: 'cURL' }}
-    curl https://api.protocol.chat/v1/groups \
-      -H "Authorization: Bearer {token}" \
-      -d name="Plaza Hotel"
-    ```
-
-    ```js
-    import ApiClient from '@example/protocol-api'
-
-    const client = new ApiClient(token)
-
-    await client.groups.create({
-      name: 'Plaza Hotel',
-    })
-    ```
-
-    ```python
-    from protocol_api import ApiClient
-
-    client = ApiClient(token)
-
-    client.groups.create(name="Plaza Hotel")
-    ```
-
-    ```php
-    $client = new \Protocol\ApiClient($token);
-
-    $client->groups->create([
-      'name' => 'Plaza Hotel',
-    ]);
-    ```
-
-    </CodeGroup>
-
-    ```json {{ title: 'Response' }}
-    {
-      "id": "l7cGNIBKZiNJ6wqF",
-      "name": "Plaza Hotel",
-      "description": null,
-      "avatar_url": null,
-      "conversation_id": "ZYjVAbCE9g5XRlra",
-      "contacts": [],
-      "created_at": 692233200,
-      "archived_at": null
-    }
-    ```
-
-  </Col>
-</Row>
-
----
-
-## Retrieve a group {{ tag: 'GET', label: '/v1/groups/:id' }}
-
-<Row>
-  <Col>
-
-    This endpoint allows you to retrieve a group by providing the group id. Refer to [the list](#the-group-model) at the top of this page to see which properties are included with group objects.
-
-  </Col>
-  <Col sticky>
-
-    <CodeGroup title="Request" tag="GET" label="/v1/groups/L7cGNIBKZiNJ6wqF">
-
-    ```bash {{ title: 'cURL' }}
-    curl https://api.protocol.chat/v1/groups/L7cGNIBKZiNJ6wqF \
-      -H "Authorization: Bearer {token}"
-    ```
-
-    ```js
-    import ApiClient from '@example/protocol-api'
-
-    const client = new ApiClient(token)
-
-    await client.groups.get('L7cGNIBKZiNJ6wqF')
-    ```
-
-    ```python
-    from protocol_api import ApiClient
-
-    client = ApiClient(token)
-
-    client.groups.get("L7cGNIBKZiNJ6wqF")
-    ```
-
-    ```php
-    $client = new \Protocol\ApiClient($token);
-
-    $client->groups->get('L7cGNIBKZiNJ6wqF');
-    ```
-
-    </CodeGroup>
-
-    ```json {{ title: 'Response' }}
-    {
-      "id": "l7cGNIBKZiNJ6wqF",
-      "name": "Plaza Hotel",
-      "description": "World-renowned.",
-      "avatar_url": "https://assets.protocol.chat/avatars/plazahotel.jpg",
-      "conversation_id": "ZYjVAbCE9g5XRlra",
-      "contacts": [
-        {
-          "username": "Hector"
-          // ...
-        },
-        {
-          "username": "Cedric"
-          // ...
-        },
-        {
-          "username": "Hester"
-          // ...
-        },
-        {
-          "username": "Cliff"
-          // ...
-        }
-      ],
-      "created_at": 692233200,
-      "archived_at": null
-    }
-    ```
-
-  </Col>
-</Row>
-
----
-
-## Update a group {{ tag: 'PUT', label: '/v1/groups/:id' }}
-
-<Row>
-  <Col>
-
-    This endpoint allows you to perform an update on a group. Examples of updates are changing the name, description, and avatar or adding and removing contacts from the group.
-
-    ### Optional attributes
-
-    <Properties>
-      <Property name="name" type="string">
-        The new name for the group.
-      </Property>
-      <Property name="description" type="string">
-        The new description for the group.
-      </Property>
-      <Property name="avatar_url" type="string">
-        The new avatar image URL for the group.
-      </Property>
-      <Property name="contacts" type="array">
-        An array of contact objects that are members of the group.
-      </Property>
-      <Property name="archived_at" type="timestamp">
-        Timestamp of when the group was archived.
-      </Property>
-    </Properties>
-
-  </Col>
-  <Col sticky>
-
-    <CodeGroup title="Request" tag="PUT" label="/v1/groups/L7cGNIBKZiNJ6wqF">
-
-    ```bash {{ title: 'cURL' }}
-    curl -X PUT https://api.protocol.chat/v1/groups/L7cGNIBKZiNJ6wqF \
-      -H "Authorization: Bearer {token}" \
-      -d description="The finest in New York."
-    ```
-
-    ```js
-    import ApiClient from '@example/protocol-api'
-
-    const client = new ApiClient(token)
-
-    await client.groups.update('L7cGNIBKZiNJ6wqF', {
-        description: 'The finest in New York.',
-    })
-    ```
-
-    ```python
-    from protocol_api import ApiClient
-
-    client = ApiClient(token)
-
-    client.groups.update("L7cGNIBKZiNJ6wqF", description="The finest in New York.")
-    ```
-
-    ```php
-    $client = new \Protocol\ApiClient($token);
-
-    $client->groups->update('L7cGNIBKZiNJ6wqF', [
-      'description' => 'The finest in New York.',
-    ]);
-    ```
-
-    </CodeGroup>
-
-    ```json {{ title: 'Response' }}
-    {
-      "id": "l7cGNIBKZiNJ6wqF",
-      "name": "Plaza Hotel",
-      "description": "The finest in New York.",
-      "avatar_url": "https://assets.protocol.chat/avatars/plazahotel.jpg",
-      "conversation_id": "ZYjVAbCE9g5XRlra",
-      "contacts": [
-        {
-          "username": "Hector"
-          // ...
-        },
-        {
-          "username": "Cedric"
-          // ...
-        },
-        {
-          "username": "Hester"
-          // ...
-        },
-        {
-          "username": "Cliff"
-          // ...
-        }
-      ],
-      "created_at": 692233200,
-      "archived_at": null
-    },
-    ```
-
-  </Col>
-</Row>
-
----
-
-## Delete a group {{ tag: 'DELETE', label: '/v1/groups/:id' }}
-
-<Row>
-  <Col>
-
-    This endpoint allows you to delete groups. Note: This will permanently delete the group, including the messages — archive it instead if you want to be able to restore it later.
-
-  </Col>
-  <Col sticky>
-
-    <CodeGroup title="Request" tag="DELETE" label="/v1/groups/L7cGNIBKZiNJ6wqF">
-
-    ```bash {{ title: 'cURL' }}
-    curl -X DELETE https://api.protocol.chat/v1/groups/L7cGNIBKZiNJ6wqF \
-      -H "Authorization: Bearer {token}"
-    ```
-
-    ```js
-    import ApiClient from '@example/protocol-api'
-
-    const client = new ApiClient(token)
-
-    await client.groups.delete('L7cGNIBKZiNJ6wqF')
-    ```
-
-    ```python
-    from protocol_api import ApiClient
-
-    client = ApiClient(token)
-
-    client.groups.delete("L7cGNIBKZiNJ6wqF")
-    ```
-
-    ```php
-    $client = new \Protocol\ApiClient($token);
-
-    $client->groups->delete('L7cGNIBKZiNJ6wqF');
-    ```
-
-    </CodeGroup>
-
-  </Col>
-</Row>
+## Attributes {{ tag: 'CMUs', label: 'Catchment Management Units' }}
+
+<List>
+    <ListItem>
+        CMUs are the basis for dividing up larger scale catchments as they deliver water, sediment, and woody debris to the main floodplain areas of larger catchments (Stream order 5 or greater).
+    </ListItem>
+    <ListItem>
+        Based on REC 3rd order catchments.
+    </ListItem>
+    <ListItem>
+        CMUs are grouped so that management units are roughly 100-5,000 ha.
+    </ListItem>
+    <ListItem>
+        Role is to create areas that can be viewed and managed in terms of the proportion and location of areas in the window of vulnerability at any one time.
+    </ListItem>
+    <ListItem>
+        Could be summarised in terms of frequency distribution or data spread.
+    </ListItem>
+    <ListItem>
+        Clipped using riverlines to delineate individual slopes.
+    </ListItem>
+    <ListItem>
+        Areas range from 1 ha to ~500 ha.
+    </ListItem>
+</List>

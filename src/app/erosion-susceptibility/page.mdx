@@ -1,7 +1,10 @@
+import { Figure } from '@/components/Figure'
+import landslideSusceptibility from './landslide_susceptibility.png'
+
 export const metadata = {
   title: 'Erosion susceptibility',
   description:
-    'Erosion susceptibility offers fine-tuned JavaScript, Ruby, PHP, Python, and Go libraries to make your life easier and give you the best experience when consuming the API.',
+    'Erosion susceptibility is determined by the predisposition of a land unit to erode.',
 }
 
 export const sections = [
@@ -13,4 +16,31 @@ export const sections = [
 
 # Erosion susceptibility
 
-The recommended way to interact with the Protocol API is by using one of our official SDKs. Today, Protocol offers fine-tuned JavaScript, Ruby, PHP, Python, and Go libraries to make your life easier and give you the best experience when consuming the API. {{ className: 'lead' }}
+Erosion susceptibility is determined by the predisposition of a land unit to erode. Predisposition to erode is an intrinsic quality of a land unit determined by its soil characteristics, geology and topographic characteristics like slope and drainage pattern. There are a number of different ways to classify erosion processes including the well-known Varnes classification for slope movements (Varnes 1978). In New Zealand, a commonly used classification is the New Zealand Land Resource Inventory (NZLRI) system (Lynn et al. 2009). The NZLRI methodology distinguishes between mass movement (landslide) erosion and fluvial erosion.  Mass movement erosion includes a wide range of erosion types where material moves downslope as a more-or-less coherent mass under the influence of gravity.  Soil slip, debris flow and earthflow are common types of mass movement erosion. {{ className: 'lead' }}
+
+<Row>
+    <Col>
+        <Figure src={landslideSusceptibility} alt="" caption="" />
+    </Col>
+    <Col>
+    </Col>
+</Row>
+
+***
+
+## Soil slips
+
+Soil slips are shallow, rapid slides and flows involving soil and underlying weathered rock. Movement rates are typically 0.5–5 m/s, or fast walking to running pace. They comprise a source area and a debris tail.  They are the most common form of landslide in New Zealand’s steepland plantation forests.
+
+## Debris flows
+
+Debris flows are intense sediment-flood events occurring in steep, erosion-susceptible catchments that can occur when heavy rainfall causes landslides to deliver large quantities of sediment to stream channels in a short period of time. This input then causes sediment to be mobilised in the channel as discrete surge waves containing boulders and, in forested catchments, woody debris. These surges move rapidly down-channel to fan areas (typically in `Zones 2` and `Zone 3`), where they can be destructive and potentially fatal. New Zealand is prone to such debris-flow events because of its active geology, frequent intense rainfall, and many steep, erodible catchments.
+
+## Earthflows
+
+Earthflows involve the slow movement of soil and associated regolith, usually along deep basal and marginal shear planes, with internal deformation of the moving mass. The original vegetated surface, although often still present, is hummocky and may contain numerous tension cracks. Earthflows are not specifically shown in the FCP erosion susceptibility mapping as they are typically slow-moving with movement rates < 0.5 m/year to > 25 m/year and are therefore less dangerous than soil slips and debris flows.
+
+## Gully erosion
+
+Gully erosion is a type of erosion that involves the removal of soil material by channelised running water. Gully erosion susceptibility is not specifically shown in the FCP. However, Spiekermann and Marden (2018) also note that in Tairāwhiti | Gisborne-East Coast, a high proportion of sediment is derived from large amphitheatre-shaped gullies, called 'fluvio-mass movement gully complexes' (Betts et al. 2003). In other words, slips, debris flows, and other mass movement erosion can occur within these large ‘badass’ gullies (Marden et al. 2018) so that they involve both fluvial and mass movement erosion processes. Because of their size and steepness, these 'fluvio- mass movement gully-complexes' are included in the FCP erosion susceptibility maps.
+
