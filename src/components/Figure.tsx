@@ -9,7 +9,7 @@ export function Figure(props: FigureProps) {
     <figure className="relative">
       <Image
         sizes="100vw"
-        className="h-full w-full"
+        className="h-full w-full rounded-sm"
         placeholder="blur"
         {...props}
         alt={props.alt || ''}

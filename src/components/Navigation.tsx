@@ -284,11 +284,8 @@ export const navigation: Array<NavGroup> = [
     title: 'Tool',
     links: [
       { title: 'Quickstart', href: '/quickstart' },
-      { title: 'Config', href: '/config' },
-      { title: 'Sharing', href: '/sharing' },
       { title: 'Interface', href: '/interface' },
       { title: 'Errors', href: '/errors' },
-      { title: 'Layers', href: '/layers' },
     ],
   },
   {
