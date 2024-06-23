@@ -1,3 +1,10 @@
+import tolagaBay from './ril_1.png'
+import marlboroughSounds from './ril_2.png'
+import landslideSusceptibility from './landslide_susceptibility_hsu.png'
+
+import { Gallery } from '@/components/Gallery'
+import { Figure } from '@/components/Figure'
+
 export const metadata = {
   title: 'Analysis',
   description:
@@ -9,6 +16,31 @@ export const metadata = {
 Combining HSUs, CMUs and erosion susceptibility. {{ className: 'lead' }}
 
 Erosion susceptibility was defined using the outputs from a prototype rainfall-induced landslide (RIL) prediction model developed by GNS Science (Massey et al. 2019). Massey et al. (2019) used a logistic regression model to create a landslide susceptibility model which was used to forecast the spatial distribution of rainfall-induced landslides in the study regions (see Appendix 1). Susceptibility models provide fundamental inputs to hazard analyses, as they describe the probability of landslide initiation at a given location (de Vilder and Massey, 2020). The output from the GNS RIL susceptibility model is a raster (or grid) showing the probability of a landslide occurring in a given pixel (32 x 32 m), when subject to a 100-year return interval rainfall event. In the FCP, these landslide probabilities were averaged for each hillslope unit, and categorised into 5 categories (very low, low, medium, high, very high) using the geometrical interval classification system in ArcGIS.
+
+<Gallery
+    images={[
+        {
+            src: tolagaBay,
+            alt: 'Tolaga Bay',
+            caption: 'Figure 5. Examples of the erosion susceptibility classification for hillslope units for i. a Tolaga Bay area of Gisborne, and ii. Marlborough Sounds and South Marlborough.',
+        },
+        {
+            src: marlboroughSounds,
+            alt: 'Marlborough Sounds and South Marlborough',
+            caption: '',
+        },
+    ]}
+/>
+
+***
+
+<Row>
+    <Col>
+        <Figure src={landslideSusceptibility} alt="" caption="Figure 6. Close up of categorised hillslope units in the Wairoa catchment" />
+    </Col>
+    <Col>
+    </Col>
+</Row>
 
 Two separate RIL models were used for this project because the regions are in different climate zones and have very different underlying rock types.  The Eastern NI model was trained using a database of 82,761 mapped landslides triggered by the 2011 Hawkes Bay storm (Jones et al. 2011) and 12,499 landslides triggered by the 2018 Tolaga Bay - Queens Birthday storm (Rosser et al. 2019). No RIL model currently exists for Marlborough/Nelson/Tasman regions, so a model developed for the West Coast (Leith et al. in prep) was applied to this region. The West Coast RIL model was developed using 1395 mapped landslides triggered by the March 2019 storm event (Wride & deVilder 2020) and 951 landslides triggered by the July 2021 storm event (unpublished GNS Science data).
 
@@ -34,7 +66,9 @@ The classification system was based on the Geometric Interval classification in 
 | Very high                    | 0.201 - 0.442        | 0.0015 - 0.079             |
 | Extreme                      | 0.442 - 0.9          | 0.079 - 0.1*               |
 
-*note there are no areas of extreme erosion susceptibility in the South Island study regions
+<Note>
+    There are no areas of extreme erosion susceptibility in the South Island study regions
+</Note>
 
 The prototype RIL susceptibility model is still undergoing development and improvements are planned for the future:
 
@@ -43,4 +77,6 @@ The prototype RIL susceptibility model is still undergoing development and impro
 3. The RIL model is trained on shallow landslides and debris flows/slides triggered by individual storm events. Areas of crushed and sheared rock types in East Coast areas (typically associated with areas underlain by the East Coast Allochthon) and earthflow and gully erosion types which dominate in these rock types are also not included. This applies to areas of crushed lithologies in both Cretaceous (greywacke) and Neogene (mudstone/ siltstone/sandstone) rocks in the Gisborne region. 
 4. Areas of very high erosion susceptibility can be lost due to the averaging of erosion susceptibility across the hillslope units. This could be improved by creating smaller hillslope units which allow areas of high erosion susceptibility to be identified and mapped as separate units.  However, this was not possible given the time restrictions for the regional-scale assessment.
 
-Note that the erosion susceptibility values should be thought of as a guide only and should not take the place of site-specific geotechnical assessments. 
+<Note>
+    Note that the erosion susceptibility values should be thought of as a guide only and should not take the place of site-specific geotechnical assessments. 
+</Note>

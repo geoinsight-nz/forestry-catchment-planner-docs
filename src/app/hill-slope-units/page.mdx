@@ -1,3 +1,6 @@
+import hsu from './hsu.png'
+import { Figure } from '@/components/Figure'
+
 export const metadata = {
   title: 'Hill Slope Units',
   description:
@@ -6,8 +9,18 @@ export const metadata = {
 
 # Hill Slope Units (HSUs)
 
-Within each CMU, we divide the area into multiple hillslope units (HSUs) that typically represent first or second-order catchments (“headwater streams”). These headwater streams are dominated by steep slopes and high stream gradients, where erosion is the dominant landscape process. We do this because, within each CMU, there can be a lot of variation in erosion susceptibility and landsliding. Each HSU represents areas in the landscape that are reasonably similar in erosion susceptibility and, therefore, in the likelihood that it will deliver woody debris and sediment downslope to the river flowing in 3rd-order (or higher) REC catchments. This allows us to visualise where erosion susceptibility is relatively higher or lower and make decisions about managing clearfelling and the cumulative area in the window of vulnerability in each CMU at any one time.  {{ className: 'lead' }}
+Within each CMU, we divide the area into multiple hillslope units (HSUs) that typically represent first or second-order catchments (“headwater streams”). {{ className: 'lead' }}
+
+These headwater streams are dominated by steep slopes and high stream gradients, where erosion is the dominant landscape process. We do this because, within each CMU, there can be a lot of variation in erosion susceptibility and landsliding. Each HSU represents areas in the landscape that are reasonably similar in erosion susceptibility and, therefore, in the likelihood that it will deliver woody debris and sediment downslope to the river flowing in 3rd-order (or higher) REC catchments. This allows us to visualise where erosion susceptibility is relatively higher or lower and make decisions about managing clearfelling and the cumulative area in the window of vulnerability in each CMU at any one time.
 
 The average size of HSUs is 28 ha (but ranging from 1-450 ha) and were defined using the REC2 watersheds, which usually correspond to first and/or second order subcatchments in the REC2 classification.
 
 Some REC2 watersheds occur on both sides of the river, these were split using the REC2 riverlines so that individual slope units were defined. Areas of flat land on floodplains, terraces or low fans were removed from the hillslope units. These areas of low slope were identified using data from the NZLRI and were clipped from the hillslope units so typically only slopes >8 degrees were included.
+
+<Row>
+    <Col>
+        <Figure src={hsu} alt="" caption="Figure 4. Floodplains, hillslope units and CMU within the Wairoa catchment, shown in relation to the Regional  LiDAR hillshade model." />
+    </Col>
+    <Col>
+    </Col>
+</Row>
