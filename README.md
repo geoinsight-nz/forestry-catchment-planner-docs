@@ -1,5 +1,7 @@
 # Forestry Catchment Planner Documentation
 
+Discover how the Forestry Catchment Planner can transform your approach to forestry management. FCP provides the tools you need for effective, sustainable forestry planning.
+
 The FCP documentation uses Protocol from [Tailwind UI](https://tailwindui.com) built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
 
 ## Getting started
