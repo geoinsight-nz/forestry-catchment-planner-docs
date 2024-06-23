@@ -105,12 +105,12 @@ export function List({ children }: { children: React.ReactNode }) {
   return (
     <ul
       role="list"
-      className="m-0 max-w-[calc(theme(maxWidth.xl)-theme(spacing.8))] list-none rounded-lg p-0 dark:ring-1 dark:ring-white/10"
+      className="m-0 max-w-full list-none rounded-lg p-0 dark:ring-1 dark:ring-white/10"
     >
       {Children.map(children, (child, childIndex) => (
         <li
           className={clsx(
-            'm-0 flex items-center p-0 text-sm text-zinc-600 transition ui-not-focus-visible:outline-none dark:border-zinc-800 dark:text-zinc-400',
+            'm-0 flex items-center p-0 break-before-auto text-sm text-zinc-600 transition ui-not-focus-visible:outline-none dark:border-zinc-800 dark:text-zinc-400',
             childIndex % 2 === 0
               ? 'bg-zinc-100 dark:bg-transparent'
               : 'bg-transparent dark:bg-white/2.5',
@@ -124,7 +124,7 @@ export function List({ children }: { children: React.ReactNode }) {
 }
 
 export function ListItem({ children }: { children: React.ReactNode }) {
-  return <span className="h-fit w-full m-0 py-0 px-2">{children}</span>
+  return <p className="h-fit w-auto m-0 py-0 px-2">{children}</p>
 }
 
 export function Properties({ children }: { children: React.ReactNode }) {
