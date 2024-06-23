@@ -240,7 +240,7 @@ export const navigation: Array<NavGroup> = [
       { title: 'Forest stand age', href: '/forest-stand-age' },
       { title: 'Depositional zones', href: '/depositional-zones' },
       { title: 'Glossary', href: '/glossary' },
-      { title: 'References', href: '/references' },
+      { title: 'Links', href: '/links' },
       { title: 'Partners', href: '/partners' },
     ],
   },
@@ -273,6 +273,10 @@ export const navigation: Array<NavGroup> = [
       {
         title: 'Melton ratio',
         href: '/melton-ratio',
+      },
+      {
+        title: 'References',
+        href: '/references',
       },
     ],
   },
