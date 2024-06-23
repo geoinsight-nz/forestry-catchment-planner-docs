@@ -77,7 +77,7 @@ export const Header = forwardRef<
           aria-label="Home"
           className="h-6 text-sm text-black dark:text-white"
         >
-            FCP
+          FCP
         </Link>
       </div>
       <div className="flex items-center gap-5">
@@ -96,7 +96,9 @@ export const Header = forwardRef<
           <ThemeToggle />
         </div>
         <div className="hidden min-[416px]:contents">
-          <Button href="#">Open app</Button>
+          <Button href="https://catchment.staging.maphq.co.nz/">
+            Open app
+          </Button>
         </div>
       </div>
     </motion.div>
