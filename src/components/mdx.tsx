@@ -105,7 +105,7 @@ export function List({ children }: { children: React.ReactNode }) {
   return (
     <ul
       role="list"
-      className="m-0 max-w-[calc(theme(maxWidth.lg)-theme(spacing.8))] list-none rounded-lg p-0 dark:ring-1 dark:ring-white/10"
+      className="m-0 max-w-[calc(theme(maxWidth.xl)-theme(spacing.8))] list-none rounded-lg p-0 dark:ring-1 dark:ring-white/10"
     >
       {Children.map(children, (child, childIndex) => (
         <li
