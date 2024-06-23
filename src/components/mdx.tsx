@@ -68,7 +68,7 @@ export function Note({ children }: { children: React.ReactNode }) {
 
 export function Center({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-nowrap items-center justify-center">
+    <div className="flex flex-nowrap items-center justify-center w-full max-w-5xl">
       {children}
     </div>
   )
