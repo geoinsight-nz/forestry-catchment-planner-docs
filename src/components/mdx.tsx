@@ -124,7 +124,7 @@ export function List({ children }: { children: React.ReactNode }) {
 }
 
 export function ListItem({ children }: { children: React.ReactNode }) {
-  return <p className="h-fit w-auto m-0 py-0 px-2">{children}</p>
+  return <span className="h-fit w-auto m-0 py-0 px-2">{children}</span>
 }
 
 export function Properties({ children }: { children: React.ReactNode }) {

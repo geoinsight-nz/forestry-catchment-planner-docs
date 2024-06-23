@@ -1,5 +1,5 @@
 import { Figure } from '@/components/Figure'
-import meltonRatio from './melton_ratio.png'
+import meltonRatio from './fcp_melton_ratio_figure.png'
 
 export const metadata = {
   title: 'Melton ratios',
@@ -21,12 +21,34 @@ These factors also contribute to the susceptibility as assessed by the Rainfall 
 
 The Melton-R is the ratio between catchment relief (difference between maximum and minimum elevations in the catchment) and the square root of watershed area (Melton 1965). Figure 7 shows the most common method for estimating the Melton-R, where it is calculated for an entire catchment above the apex of the fan onto which a debris flow would discharge.
 
-<Row>
-    <Col>
-        <Figure src={meltonRatio} alt="" caption="Figure 7. Calculation of the Melton-R for a steep catchment (red area) above an alluvial fan (middle yellow area). Source: https://www.kingcounty.gov/services/environment/water-and-land/flooding/maps/river-landslide-hazards/mapping-methodologies.aspx, downloaded 1 March 2021." />
-    </Col>
-    <Col>
-    </Col>
-</Row>
+***
+
+<Figure src={meltonRatio} alt="Melton ratio" caption="Figure 7. Calculation of the Melton-R for a steep catchment (red area). Example illustration based on excerpt from Melton, M. A. (1965). The geomorphic and paleoclimatic significance of alluvial deposits in southern Arizona. The Journal of Geology, 1-38." />
+
+```json {{ title: 'Calculation of the Melton-R' }}
+        Melton ratio = Relative Relief Ratio
+
+        Melton ratio (R) = Hb Ab^-0.5
+
+        Hb: basin relief (difference between maximum and minimum elevations in the basin)
+
+        Ab: total area of the basin
+
+        Example: Alpine Baldy, South Fork Skykomish
+
+        Top Elev.: 1,584 m
+
+        Bottom Elev.: 464 m
+
+        Area: 2,351,050 m²
+
+        R = (1584 - 464) * (2,351,050)^-0.5
+
+        = 0.73
+```
+
+<Note>
+    Source: Melton, M. A. (1965). The geomorphic and paleoclimatic significance of alluvial deposits in southern Arizona. The Journal of Geology, 1-38.
+</Note>
 
 To account for both landslides and debris flows, the FCP calculates the Melton-R for each HSU, then overlays these over the HSU’s Rainfall Induced Landslide (RIL) susceptibility, to provide an overall indication of where landslide sediments are more likely to mobilise as debris flows.
