@@ -97,6 +97,49 @@ function DiscordIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
+function FacebookIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="48"
+      height="48"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="0.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      className="lucide lucide-facebook"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  )
+}
+
+function EmailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="48"
+      height="48"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="0.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      className="lucide lucide-mail"
+      aria-hidden="true"
+      {...props}
+    >
+      <rect width="20" height="16" x="2" y="4" rx="2" />
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+    </svg>
+  )
+}
+
 function SocialLink({
   href,
   icon: Icon,
@@ -118,17 +161,18 @@ function SmallPrint() {
   return (
     <div className="flex flex-col items-center justify-between gap-5 border-t border-zinc-900/5 pt-8 sm:flex-row dark:border-white/5">
       <p className="text-xs text-zinc-600 dark:text-zinc-400">
-        &copy; Copyright {new Date().getFullYear()}. All rights reserved.
+        &copy; GeoInsight Ltd Copyright {new Date().getFullYear()}. All rights
+        reserved.
       </p>
       <div className="flex gap-4">
-        <SocialLink href="#" icon={XIcon}>
-          Follow us on X
+        <SocialLink
+          href="https://www.facebook.com/GeoInsightNZ"
+          icon={FacebookIcon}
+        >
+          Follow us on Facebook
         </SocialLink>
-        <SocialLink href="#" icon={GitHubIcon}>
-          Follow us on GitHub
-        </SocialLink>
-        <SocialLink href="#" icon={DiscordIcon}>
-          Join our Discord server
+        <SocialLink href="mailto:info@geoinsight.co.nz" icon={EmailIcon}>
+          Email us
         </SocialLink>
       </div>
     </div>
