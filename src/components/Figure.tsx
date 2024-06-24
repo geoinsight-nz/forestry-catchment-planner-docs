@@ -5,10 +5,10 @@ import { useEffect, useState } from 'react'
 
 type FigureProps = {
   caption?: string
-  darkSrc?: string
+  srcDark?: string
 } & ImageProps
 
-export function Figure({ src, darkSrc, ...props }: FigureProps) {
+export function Figure({ src, srcDark, ...props }: FigureProps) {
   const [isDarkMode, setIsDarkMode] = useState(false)
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export function Figure({ src, darkSrc, ...props }: FigureProps) {
     }
   }, [])
 
-  const imageSrc = darkSrc && isDarkMode ? darkSrc : src
+  const imageSrc = srcDark && isDarkMode ? srcDark : src
 
   return (
     <figure className="relative">
