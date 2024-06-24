@@ -7,6 +7,10 @@ import measureDistanceLight from './measure_distance_light.png'
 import measureDistanceDark from './measure_distance_dark.png'
 import measureAreaLight from './measure_area_light.png'
 import measureAreaDark from './measure_area_dark.png'
+import measureElevationLight from './measure_elevation_light.png'
+import measureElevationDark from './measure_elevation_dark.png'
+import measureLight from './measure_light.png'
+import measureDark from './measure_dark.png'
 
 export const metadata = {
   title: 'Interface',
@@ -56,11 +60,13 @@ Users can measure an area by clicking the `Measure Area` tool > Clicking on the 
 
 ## Measure a distance
 
-<Figure src={measureDistanceLight} srcDark={measureDistanceDark} alt="Measure a distance on the map." />
+<Figure src={measureLight} srcDark={measureDark} alt="Measure a distance on the map." />
 
 Users can measure a distance by clicking the `Measure Line` tool > Clicking on the map and drawing a path for what to measure. When you’re finished > double click to complete the line. A popup will appear with your measurements.
 
 ## Measure Elevation Profile along a line
+
+<Figure src={measureElevationLight} srcDark={measureElevationDark} alt="Measure an elevation on the map." />
 
 Users can measure an elevation profile by clicking the `Elevation Profile` tool > Clicking on the map and drawing a path for what to measure. When you’re finished > double click to complete the line. A chart with the elevation profile along the path you drew will appear.
 
