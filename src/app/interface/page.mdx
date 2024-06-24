@@ -30,9 +30,17 @@ export const metadata = {
 export const sections = [
   { title: 'Time-slider', id: 'time-slider' },
   { title: 'Sharing', id: 'sharing' },
-  { title: 'Measure an area', id: 'measure-an-area' },
-  { title: 'Measure a distance', id: 'measure-an-distance' },
-  { title: 'Measure a distance', id: 'measure-an-distance' },
+  { title: 'Measuring an area', id: 'measure-an-area' },
+  { title: 'Measuring a distance', id: 'measure-an-distance' },
+  { title: 'Measuring a distance', id: 'measure-an-distance' },
+  { title: 'Measuring an elevation', id: 'measure-an-elevation' },
+  { title: 'Calculating a gradient', id: 'calculate-a-gradient' },
+  { title: '2D and 3D mode', id: '2d-3d-mode' },
+  { title: 'Multi-selection modal', id: 'multi-selection-modal' },
+  { title: 'Changing basemaps', id: 'changing-basemaps' },
+  { title: 'Toggling layers', id: 'toggling-layers' },
+  { title: 'Rotating the map', id: 'rotating-the-map' },
+  { title: 'Zooming in and out', id: 'zooming-in-out' },
 ]
 
 # Interface
@@ -61,25 +69,25 @@ The `Share` tool gives the ability to quickly share with other users the map vie
 - Simply click the share button which copies the link to the clipboard, paste and send to someone.
 - Clicking the link will immediately snap the user to the view you shared.
 
-## Measure an area
+## Measuring an area
 
 <Figure src={measureAreaLight} srcDark={measureAreaDark} alt="Measure an area on the map." />
 
 Users can measure an area by clicking the `Measure Area` tool > Clicking on the map and drawing the area to measure. When you’re finished > double click to complete the measurement area. A popup will appear with your measurements.
 
-## Measure a distance
+## Measuring a distance
 
 <Figure src={measureLight} srcDark={measureDark} alt="Measure a distance on the map." />
 
 Users can measure a distance by clicking the `Measure Line` tool > Clicking on the map and drawing a path for what to measure. When you’re finished > double click to complete the line. A popup will appear with your measurements.
 
-## Measure an elevation profile along a line
+## Measuring an elevation profile along a line
 
 <Figure src={elevationLight} srcDark={elevationDark} alt="Measure an elevation on the map." />
 
 Users can measure an elevation profile by clicking the `Elevation Profile` tool > Clicking on the map and drawing a path for what to measure. When you’re finished > double click to complete the line. A chart with the elevation profile along the path you drew will appear.
 
-## Calculate a gradient between two points
+## Calculating a gradient between two points
 
 <Figure src={measureElevationLight} srcDark={measureElevationDark} alt="Measure a gradient of elevation." />
 
@@ -87,13 +95,13 @@ Once you’ve calculated an elevation profile you can also calculate the gradien
 
 ## Swapping between 2D and 3D mode
 
-<Figure src={3DMode} srcDark={3DMode} alt="Measure a gradient of elevation." />
+<Figure src={3DMode} srcDark={3DMode} alt="Switch between 2D and 3D mode." />
 
 Open the toolbar by clicking the little arrow under the tools icon top right. Click the `3D` button to snap the map into 3D mode which will load a 3 dimensional terrain landscape. Clicking the `2D` button will snap the map back into 2D mode. 
 
 ## Selecting a feature
 
-<Figure src={featureLight} srcDark={featureDark} alt="Multi select modal." />
+<Figure src={featureLight} srcDark={featureDark} alt="Feature information panel." />
 
 If a feature is clickable on the map, clicking the feature will zoom the viewport to the extent of the feature and show you information about that feature. Some features are not clickable and provide visual context only. 
 
@@ -115,7 +123,7 @@ Click the `Layers` icon top right > expand the `Basemaps` layer group > Choose o
 
 Click the `Layers` icon top right to expand the layers menu. You can toggle a layer on and off or change it’s opacity (transparency) by sliding the opacity slider.
 
-## Rotate the map
+## Rotating the map
 
 Right click and drag the map to rotate it. In 3D mode right click and drag up or down to change the tilt of the map or drag right to left to rotate it. 
 
