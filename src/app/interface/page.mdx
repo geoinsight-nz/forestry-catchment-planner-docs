@@ -3,6 +3,10 @@ import timeSliderLight from './time_slider_light.png'
 import timeSliderDark from './time_slider_dark.png'
 import shareLight from './share_light.png'
 import shareDark from './share_dark.png'
+import measureDistanceLight from './measureDistanceLight.png'
+import measureDistanceDark from './measureDistanceDark.png'
+import measureAreaLight from './measureAreaLight.png'
+import measureAreaDark from './measureAreaDark.png'
 
 export const metadata = {
   title: 'Interface',
@@ -13,7 +17,7 @@ export const metadata = {
 export const sections = [
   { title: 'Time-slider', id: 'time-slider' },
   { title: 'Sharing', id: 'sharing' },
-  { title: 'Measure a area', id: 'measure-an-area' },
+  { title: 'Measure an area', id: 'measure-an-area' },
   { title: 'Measure a distance', id: 'measure-an-distance' },
   { title: 'Measure a distance', id: 'measure-an-distance' },
 ]
@@ -46,9 +50,13 @@ The `Share` tool gives the ability to quickly share with other users the map vie
 
 ## Measure an area
 
+<Figure src={measureAreaLight} srcDark={measureAreaDark} alt="Measure an area on the map." />
+
 Users can measure an area by clicking the `Measure Area` tool > Clicking on the map and drawing the area to measure. When you’re finished > double click to complete the measurement area. A popup will appear with your measurements.
 
 ## Measure a distance
+
+<Figure src={measureDistanceLight} srcDark={measureDistanceDark} alt="Measure a distance on the map." />
 
 Users can measure a distance by clicking the `Measure Line` tool > Clicking on the map and drawing a path for what to measure. When you’re finished > double click to complete the line. A popup will appear with your measurements.
 
