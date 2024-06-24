@@ -286,6 +286,7 @@ export const navigation: Array<NavGroup> = [
       { title: 'Quickstart', href: '/quickstart' },
       { title: 'Interface', href: '/interface' },
       { title: 'Errors', href: '/errors' },
+      { title: 'Changelog', href: '/changelog' },
     ],
   },
   {
