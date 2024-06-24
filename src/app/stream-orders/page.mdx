@@ -1,4 +1,5 @@
-import strahlerClassification from './strahler_classification_dark.png'
+import strahlerClassificationDark from './strahler_classification_dark.png'
+import strahlerClassificationLight from './strahler_classification_light.png'
 import { Figure } from '@/components/Figure'
 
 export const metadata = {
@@ -21,14 +22,14 @@ Stream ordering in a drainage network classifies the hierarchy of channels in a 
 
 <Row>
     <Col>
-        <Figure src={strahlerClassification} alt="" caption="Figure 1" />
+        <Figure src={strahlerClassificationLight} srcDark={strahlerClassificationDark} alt="" caption="Figure 2. Stream order classification. Source: NIWA." />
     </Col>
     <Col>
 
     </Col>
 </Row>
 
-| Network position (Refer Figure 1) | Order     | Gradient     | Landforms                     | Dominant process  |
+| Network position (Refer to [Figure 1](/depositional-zones#river-environments)) | Order     | Gradient     | Landforms                     | Dominant process  |
 |-----------------------------------|-----------|--------------|-------------------------------|-------------------|
 | Zone 1                            | 1,2       | High/steep   | Headwater streams             | Erosion           |
 | Zone 2                            | 3,4       | Mid gradient | Pool/riffle, tributaries      | Transfer/storage  |
