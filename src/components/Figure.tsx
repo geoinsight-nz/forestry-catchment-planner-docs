@@ -8,7 +8,7 @@ type FigureProps = {
   darkSrc?: string
 } & ImageProps
 
-export function Figure({ src, darkSrc, caption, ...props }: FigureProps) {
+export function Figure({ src, darkSrc, ...props }: FigureProps) {
   const [isDarkMode, setIsDarkMode] = useState(false)
 
   useEffect(() => {
