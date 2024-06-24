@@ -11,8 +11,8 @@ import '@/styles/tailwind.css'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Protocol API Reference',
-    default: 'Protocol API Reference',
+    template: '%s - Forestry Catchment Planner Documentation',
+    default: 'Forestry Catchment Planner Documentation',
   },
 }
 
