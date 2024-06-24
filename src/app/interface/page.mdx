@@ -11,6 +11,15 @@ import measureElevationLight from './measure_elevation_light.png'
 import measureElevationDark from './measure_elevation_dark.png'
 import measureLight from './measure_light.png'
 import measureDark from './measure_dark.png'
+import elevationDark from './elevation_dark.png'
+import elevationLight from './elevation_light.png'
+import layersControl from './layers_control.png'
+import layersButton from './layers_button.png'
+import multiSelectDark from './multi_select_modal_dark.png'
+import multiSelectLight from './multi_select_modal_light.png'
+import featureLight from './features_info_light.png'
+import featureDark from './features_info_dark.png'
+import 3DMode from './3D_mode.png'
 
 export const metadata = {
   title: 'Interface',
@@ -64,33 +73,45 @@ Users can measure an area by clicking the `Measure Area` tool > Clicking on the 
 
 Users can measure a distance by clicking the `Measure Line` tool > Clicking on the map and drawing a path for what to measure. When you’re finished > double click to complete the line. A popup will appear with your measurements.
 
-## Measure Elevation Profile along a line
+## Measure an elevation profile along a line
 
-<Figure src={measureElevationLight} srcDark={measureElevationDark} alt="Measure an elevation on the map." />
+<Figure src={elevationLight} srcDark={elevationDark} alt="Measure an elevation on the map." />
 
 Users can measure an elevation profile by clicking the `Elevation Profile` tool > Clicking on the map and drawing a path for what to measure. When you’re finished > double click to complete the line. A chart with the elevation profile along the path you drew will appear.
 
-## Calculate Gradient between two points
+## Calculate a gradient between two points
+
+<Figure src={measureElevationLight} srcDark={measureElevationDark} alt="Measure a gradient of elevation." />
 
 Once you’ve calculated an elevation profile you can also calculate the gradient between two points by clicking any point on the chart to set the first point and clicking another point on the chart will automatically calculate the gradient. 
 
 ## Swapping between 2D and 3D mode
 
+<Figure src={3DMode} srcDark={3DMode} alt="Measure a gradient of elevation." />
+
 Open the toolbar by clicking the little arrow under the tools icon top right. Click the `3D` button to snap the map into 3D mode which will load a 3 dimensional terrain landscape. Clicking the `2D` button will snap the map back into 2D mode. 
 
 ## Selecting a feature
 
+<Figure src={featureLight} srcDark={featureDark} alt="Multi select modal." />
+
 If a feature is clickable on the map, clicking the feature will zoom the viewport to the extent of the feature and show you information about that feature. Some features are not clickable and provide visual context only. 
 
-## Multi-selection Modal
+## Multi-selection modal
+
+<Figure src={multiSelectLight} srcDark={multiSelectDark} alt="Multi select modal." />
 
 When there are several overlapping features, a multi-selection popup will show, giving you the option to choose which feature to select. Clicking the option in the menu will zoom you to the feature.
 
 ## Changing basemaps
 
+<Figure src={layersControl} srcDark={layersControl} alt="Toggle layers from the layers menu." />
+
 Click the `Layers` icon top right > expand the `Basemaps` layer group > Choose one of the four available basemaps.
 
 ## Toggling layers
+
+<Figure src={layersButton} srcDark={layersButton} alt="Toggle layers from the layers menu." />
 
 Click the `Layers` icon top right to expand the layers menu. You can toggle a layer on and off or change it’s opacity (transparency) by sliding the opacity slider.
 
