@@ -1,13 +1,37 @@
+'use client'
+
 import Image, { ImageProps } from 'next/image'
+import { useEffect, useState } from 'react'
 
 type FigureProps = {
   caption?: string
+  srcDark?: string
 } & ImageProps
 
-export function Figure(props: FigureProps) {
+export function Figure({ src, srcDark, ...props }: FigureProps) {
+  const [isDarkMode, setIsDarkMode] = useState(false)
+
+  useEffect(() => {
+    const matchDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
+    setIsDarkMode(matchDarkMode.matches)
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsDarkMode(e.matches)
+    }
+
+    matchDarkMode.addEventListener('change', handleChange)
+
+    return () => {
+      matchDarkMode.removeEventListener('change', handleChange)
+    }
+  }, [])
+
+  const imageSrc = srcDark && isDarkMode ? srcDark : src
+
   return (
     <figure className="relative">
       <Image
+        src={imageSrc}
         sizes="100vw"
         className="h-full w-full rounded-sm"
         placeholder="blur"
