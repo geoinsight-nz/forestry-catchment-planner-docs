@@ -1,5 +1,6 @@
 import { Figure } from '@/components/Figure'
-import map from './nz_map_regions.jpg'
+import mapLight from './nz_regions_light.png'
+import mapDark from './nz_regions_dark.png'
 
 export const metadata = {
   title: 'Regions',
@@ -49,7 +50,7 @@ Each region exposed particular challenges that our methodology was forced to add
   </Col>
   <Col sticky>
 
-    <Figure src={map} alt="" caption=""/>
+    <Figure src={mapLight} darkSrc={mapDark} alt="Targeted regions." caption=""/>
 
   </Col>
 </Row>
