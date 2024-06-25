@@ -26,8 +26,6 @@ export const img = (props: ImageProps) => (
   <Image
     sizes="100vw"
     className="h-auto w-full"
-    width={600}
-    height={400}
     {...props}
     alt={props.alt || ''}
   />
