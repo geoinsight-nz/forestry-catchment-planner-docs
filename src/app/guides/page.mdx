@@ -38,17 +38,17 @@ export const metadata = {
 export const sections = [
   { title: 'Time-slider', id: 'time-slider' },
   { title: 'Sharing', id: 'sharing' },
-  { title: 'Measuring an area', id: 'measuring-an-area' },
-  { title: 'Measuring a distance', id: 'measuring-an-distance' },
-  { title: 'Measuring a distance', id: 'measuring-an-distance' },
-  { title: 'Measuring an elevation', id: 'measuring-an-elevation' },
-  { title: 'Calculating a gradient', id: 'calculating-a-gradient' },
   { title: '2D and 3D mode', id: '2d-3d-mode' },
   { title: 'Multi-selection modal', id: 'multi-selection-modal' },
   { title: 'Changing basemaps', id: 'changing-basemaps' },
   { title: 'Toggling layers', id: 'toggling-layers' },
   { title: 'Rotating the map', id: 'rotating-the-map' },
   { title: 'Zooming in and out', id: 'zooming-in-out' },
+  { title: 'Measuring an area', id: 'measuring-an-area' },
+  { title: 'Measuring a distance', id: 'measuring-an-distance' },
+  { title: 'Measuring a distance', id: 'measuring-an-distance' },
+  { title: 'Measuring an elevation', id: 'measuring-an-elevation' },
+  { title: 'Calculating a gradient', id: 'calculating-a-gradient' },
 ]
 
 # Interface
@@ -77,29 +77,6 @@ The `Share` tool gives the ability to quickly share with other users the map vie
 - Simply click the share button which copies the link to the clipboard, paste and send to someone.
 - Clicking the link will immediately snap the user to the view you shared.
 
-## Measuring an area
-
-<Figure src={measureAreaLight} srcDark={measureAreaDark} alt="Measure an area on the map." />
-
-Users can measure an area by clicking the `Measure Area` tool > Clicking on the map and drawing the area to measure. When you’re finished > double click to complete the measurement area. A popup will appear with your measurements.
-
-## Measuring a distance
-
-<Figure src={measureLight} srcDark={measureDark} alt="Measure a distance on the map." />
-
-Users can measure a distance by clicking the `Measure Line` tool > Clicking on the map and drawing a path for what to measure. When you’re finished > double click to complete the line. A popup will appear with your measurements.
-
-## Measuring an elevation profile along a line
-
-<Figure src={elevationLight} srcDark={elevationDark} alt="Measure an elevation on the map." />
-
-Users can measure an elevation profile by clicking the `Elevation Profile` tool > Clicking on the map and drawing a path for what to measure. When you’re finished > double click to complete the line. A chart with the elevation profile along the path you drew will appear.
-
-## Calculating a gradient between two points
-
-<Figure src={measureElevationLight} srcDark={measureElevationDark} alt="Measure a gradient of elevation." />
-
-Once you’ve calculated an elevation profile you can also calculate the gradient between two points by clicking any point on the chart to set the first point and clicking another point on the chart will automatically calculate the gradient. 
 
 ## Swapping between 2D and 3D mode
 
@@ -138,3 +115,27 @@ Right click and drag the map to rotate it. In 3D mode right click and drag up or
 ## Zooming in and out
 
 Use the scroll wheel on your mouse, or the trackpad on your laptop, to zoom in and out. You can also double click the map to zoom in, or hold `shift` and double click to zoom out.
+
+## Measuring an area
+
+<Figure src={measureAreaLight} srcDark={measureAreaDark} alt="Measure an area on the map." />
+
+Users can measure an area by clicking the `Measure Area` tool > Clicking on the map and drawing the area to measure. When you’re finished > double click to complete the measurement area. A popup will appear with your measurements.
+
+## Measuring a distance
+
+<Figure src={measureLight} srcDark={measureDark} alt="Measure a distance on the map." />
+
+Users can measure a distance by clicking the `Measure Line` tool > Clicking on the map and drawing a path for what to measure. When you’re finished > double click to complete the line. A popup will appear with your measurements.
+
+## Measuring an elevation profile along a line
+
+<Figure src={elevationLight} srcDark={elevationDark} alt="Measure an elevation on the map." />
+
+Users can measure an elevation profile by clicking the `Elevation Profile` tool > Clicking on the map and drawing a path for what to measure. When you’re finished > double click to complete the line. A chart with the elevation profile along the path you drew will appear.
+
+## Calculating a gradient between two points
+
+<Figure src={measureElevationLight} srcDark={measureElevationDark} alt="Measure a gradient of elevation." />
+
+Once you’ve calculated an elevation profile you can also calculate the gradient between two points by clicking any point on the chart to set the first point and clicking another point on the chart will automatically calculate the gradient. 

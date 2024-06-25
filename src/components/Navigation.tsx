@@ -284,7 +284,7 @@ export const navigation: Array<NavGroup> = [
     title: 'Tool',
     links: [
       { title: 'Quickstart', href: '/quickstart' },
-      { title: 'Interface', href: '/interface' },
+      { title: 'Guides', href: '/guides' },
       { title: 'Errors', href: '/errors' },
       { title: 'Changelog', href: '/changelog' },
     ],
