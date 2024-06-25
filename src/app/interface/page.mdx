@@ -1,25 +1,33 @@
 import { Figure } from '@/components/Figure'
+
 import timeSliderLight from './time_slider_light.png'
 import timeSliderDark from './time_slider_dark.png'
+
 import shareLight from './share_light.png'
 import shareDark from './share_dark.png'
-import measureDistanceLight from './measure_distance_light.png'
-import measureDistanceDark from './measure_distance_dark.png'
+
 import measureAreaLight from './measure_area_light.png'
 import measureAreaDark from './measure_area_dark.png'
-import measureElevationLight from './measure_elevation_light.png'
-import measureElevationDark from './measure_elevation_dark.png'
+
 import measureLight from './measure_light.png'
 import measureDark from './measure_dark.png'
+
 import elevationDark from './elevation_dark.png'
 import elevationLight from './elevation_light.png'
-import layersControl from './layers_control.png'
-import layersButton from './layers_button.png'
-import multiSelectDark from './multi_select_modal_dark.png'
-import multiSelectLight from './multi_select_modal_light.png'
+
+import measureElevationLight from './measure_elevation_light.png'
+import measureElevationDark from './measure_elevation_dark.png'
+
+import viewMode from './view_mode.png'
+
 import featureLight from './features_info_light.png'
 import featureDark from './features_info_dark.png'
-import 3DMode from './3D_mode.png'
+
+import multiSelectDark from './multi_select_modal_dark.png'
+import multiSelectLight from './multi_select_modal_light.png'
+
+import layersControl from './layers_control.png'
+import layersButton from './layers_button.png'
 
 export const metadata = {
   title: 'Interface',
@@ -30,11 +38,11 @@ export const metadata = {
 export const sections = [
   { title: 'Time-slider', id: 'time-slider' },
   { title: 'Sharing', id: 'sharing' },
-  { title: 'Measuring an area', id: 'measure-an-area' },
-  { title: 'Measuring a distance', id: 'measure-an-distance' },
-  { title: 'Measuring a distance', id: 'measure-an-distance' },
-  { title: 'Measuring an elevation', id: 'measure-an-elevation' },
-  { title: 'Calculating a gradient', id: 'calculate-a-gradient' },
+  { title: 'Measuring an area', id: 'measuring-an-area' },
+  { title: 'Measuring a distance', id: 'measuring-an-distance' },
+  { title: 'Measuring a distance', id: 'measuring-an-distance' },
+  { title: 'Measuring an elevation', id: 'measuring-an-elevation' },
+  { title: 'Calculating a gradient', id: 'calculating-a-gradient' },
   { title: '2D and 3D mode', id: '2d-3d-mode' },
   { title: 'Multi-selection modal', id: 'multi-selection-modal' },
   { title: 'Changing basemaps', id: 'changing-basemaps' },
@@ -95,7 +103,7 @@ Once you’ve calculated an elevation profile you can also calculate the gradien
 
 ## Swapping between 2D and 3D mode
 
-<Figure src={3DMode} srcDark={3DMode} alt="Switch between 2D and 3D mode." />
+<Figure src={viewMode} alt="Switch between 2D and 3D mode." />
 
 Open the toolbar by clicking the little arrow under the tools icon top right. Click the `3D` button to snap the map into 3D mode which will load a 3 dimensional terrain landscape. Clicking the `2D` button will snap the map back into 2D mode. 
 
@@ -113,7 +121,7 @@ When there are several overlapping features, a multi-selection popup will show, 
 
 ## Changing basemaps
 
-<Figure src={layersControl} srcDark={layersControl} alt="Toggle layers from the layers menu." />
+<Figure src={layersControl} alt="Toggle layers from the layers menu." />
 
 Click the `Layers` icon top right > expand the `Basemaps` layer group > Choose one of the four available basemaps.
 
@@ -129,4 +137,4 @@ Right click and drag the map to rotate it. In 3D mode right click and drag up or
 
 ## Zooming in and out
 
-Use the scroll wheel on your mouse, or your laptop's trackpad, to zoom in and out. You can also double click the map to zoom in, or hold `shift` and double click to zoom out.
+Use the scroll wheel on your mouse, or the trackpad on your laptop, to zoom in and out. You can also double click the map to zoom in, or hold `shift` and double click to zoom out.
