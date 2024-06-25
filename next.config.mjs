@@ -1,3 +1,4 @@
+import { withNextVideo } from "next-video/process";
 import nextMDX from '@next/mdx'
 
 import { recmaPlugins } from './src/mdx/recma.mjs'
@@ -20,4 +21,4 @@ const nextConfig = {
   images: { unoptimized: true, domains: ['github.com'] },
 }
 
-export default withSearch(withMDX(nextConfig))
+export default withNextVideo(withSearch(withMDX(nextConfig)));
