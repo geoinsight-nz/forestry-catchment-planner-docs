@@ -1,3 +1,8 @@
+import { Gallery } from '@/components/Gallery'
+import before from './map_graph_assets_before.png'
+import after from './map_graph_assets_after.png'
+import detection from './map_graph_assets_harvest_detection.png'
+
 export const metadata = {
   title: 'Plantation forests',
   description:
@@ -14,6 +19,13 @@ export const sections = [
 
 New Zealand's forestry industry is largely based around sustainably-managed plantation forests. About 90% of New Zealand's forests are radiata pine (Pinus radiata). The remainder are Douglas fir (Pseudotsuga menziesii) amounting to 6% of total plantation area, and other areas are made up by softwood and hardwood species. {{ className: 'lead' }}
 
+<Note>
+    Radiata pine forests planted for production in New Zealand cover approximately 1.79 million hectares, as at 1 April 2023.
+    The total standing volume of these forests is estimated at 549 million cubic metres, with an average age of 18.8 years.
+
+    For more see: https://www.mpi.govt.nz/forestry/forest-industry-and-workforce/forestry-wood-processing-data/new-zealand-forest-data/
+</Note>
+
 ## Radiata pines
 
 Radiata pine roots decay quite rapidly after the tree is cut down, and as they do so their reinforcement effect declines to zero.   The replanted trees take time to grow enough roots to fully occupy and reinforce the soil and this results in a period of reduced root reinforcement of between 6-8 years post-harvest, depending on the initial spacing and growth of the replanted tree crop.
@@ -22,8 +34,30 @@ Radiata pine roots decay quite rapidly after the tree is cut down, and as they d
 
 The key difference between a plantation forest and an indigenous forest, at least in NZ, is that the plantation forest will be clearfelled once it is mature. For radiata pine plantations, this is done at an average age of 28 years, although this can be earlier or later depending on the forest owners' objectives.
 
+With reference to forestry harvesting cycles we can determine the age of the plantation with the aim of showing where clearfell harvesting is predicted to happen at any time in the future. In this way, we can show how much land will be in the window of vulnerability and where it will be located.
+
 ## Clearfell harvesting
 
 It is important to recognise that outside of the window of vulnerability, erosion and landslides can still occur on steep, erosion-susceptible land, even under a tall forest. But these landslides are less likely to occur because tall trees reinforce and protect the soil.
 
 Therefore, when clearfell harvesting plantation forests on steep, erosion-susceptible land, we need to recognise that there is a period with higher risks from landslides and erosion, and manage the location and size of the clearfells to minimise any increase in sediment and slash entering our river networks.
+
+<Gallery
+  images={[
+    {
+      src: before,
+      alt: 'Before',
+      caption: 'Before harvesting.',
+    },
+    {
+      src: after,
+      alt: 'After',
+      caption: 'After clearfelling.',
+    },
+    {
+      src: detection,
+      alt: 'Detection',
+      caption: 'Detection of harvest.',
+    },
+  ]}
+/>

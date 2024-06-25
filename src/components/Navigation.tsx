@@ -245,7 +245,6 @@ export const navigation: Array<NavGroup> = [
     title: 'Methodology',
     links: [
       { title: 'Plantation forests', href: '/plantation-forests' },
-      { title: 'Forest stand age', href: '/forest-stand-age' },
       { title: 'Age class process', href: '/age-class-process' },
       { title: 'Clearfelling', href: '/clearfelling' },
       { title: 'Depositional zones', href: '/depositional-zones' },

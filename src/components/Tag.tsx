@@ -31,6 +31,11 @@ const colorStyles = {
     medium:
       'ring-zinc-200 bg-zinc-50 text-zinc-500 dark:ring-zinc-500/20 dark:bg-zinc-400/10 dark:text-zinc-400',
   },
+  brand: {
+    small: 'text-brand-400 dark:text-brand-500',
+    medium:
+      'ring-brand-200 bg-brand-50 text-brand-500 dark:ring-brand-500/20 dark:bg-brand-400/10 dark:text-brand-400',
+  },
 }
 
 const valueColorMap = {
@@ -38,6 +43,7 @@ const valueColorMap = {
   POST: 'sky',
   PUT: 'amber',
   DELETE: 'rose',
+  NEUTRAL: 'brand',
 } as Record<string, keyof typeof colorStyles>
 
 export function Tag({
