@@ -1,6 +1,10 @@
 import { Guides } from '@/components/Guides'
 import { Resources } from '@/components/Resources'
 import { HeroPattern } from '@/components/HeroPattern'
+import { Figure } from '@/components/Figure'
+import demoLight from './fcp_demo_light_grey.png'
+import demoDark from './fcp_demo_light_charcoal_nelson.png'
+import demoNeutral from './fcp_bg_white.png'
 
 export const metadata = {
   title: 'Forestry in Aotearoa New Zealand',
@@ -29,6 +33,8 @@ Use this documentation to access the science, methodology, and guides for engagi
     <>Methodology</>
   </Button>
 </div>
+
+<Figure src={demoLight} srcDark={demoNeutral} alt="Application demonstration." />
 
 ## About
 
