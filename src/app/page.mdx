@@ -2,11 +2,13 @@ import { Guides } from '@/components/Guides'
 import { Resources } from '@/components/Resources'
 import { HeroPattern } from '@/components/HeroPattern'
 import { Figure } from '@/components/Figure'
+import Image from 'next/image'
+
 import demoLight from './fcp_demo_light_grey.png'
 import demoDark from './fcp_demo_light_charcoal_nelson.png'
 import demoNeutral from './fcp_bg_white.png'
 import catchments from './catchments.gif'
-import Image from 'next/image'
+import timeSlider from './time_slider_tool_home.gif'
 
 export const metadata = {
   title: 'Forestry in Aotearoa New Zealand',
@@ -36,7 +38,7 @@ Use this documentation to access the science, methodology, and guides for engagi
   </Button>
 </div>
 
-<Image src={catchments} alt="Application demonstration." sizes="100vw" className="h-auto w-full rounded-sm object-fit" />
+<Image src={timeSlider} alt="Application demonstration." sizes="100vw" className="h-auto w-full rounded-sm object-fit" />
 
 <Figure src={demoLight} srcDark={demoNeutral} alt="Application demonstration." />
 
