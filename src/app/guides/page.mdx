@@ -1,4 +1,5 @@
 import { Figure } from '@/components/Figure'
+import Image from 'next/image'
 
 import timeSliderLight from './time_slider_light.png'
 import timeSliderDark from './time_slider_dark.png'
@@ -29,6 +30,20 @@ import multiSelectLight from './multi_select_modal_light.png'
 import layersControl from './layers_control.png'
 import layersButton from './layers_button.png'
 
+import timeSliderTool from './time_slider_tool.gif'
+import measureDistanceTool from './measure_distance_tool.gif'
+import measurePolygonTool from './measure_polygon_tool.gif'
+import measureElevationTool from './measure_elevation_tool.gif'
+import viewModeTool from './two_to_three_dimensions_button.gif'
+import shareTool from './share_tool.gif'
+import multiSelectionTool from './multi_selection_tool.gif'
+import layersTool from './layers_panel.gif'
+import baseMaps from './basemaps_swap.gif'
+import expandMenu from './expand_menu_button.gif'
+import zoomTool from './zoom_in_tool.gif'
+import rotateTool from './rotate_tool.gif'
+import featureTool from './feature_tool.gif'
+
 export const metadata = {
   title: 'Interface',
   description:
@@ -57,6 +72,8 @@ Below you will find details and descriptions of how to use the features of the F
 
 ## Time-slider
 
+<Image src={timeSliderTool} alt="Application demonstration." sizes="100vw" className="h-auto w-full rounded-sm object-fit bg-zinc-800" />
+
 <Figure src={timeSliderLight} srcDark={timeSliderDark} alt="Time-slider." />
 
 The `Time-slider` gives the ability to visualise where forest harvesting is likely to take place based on the stand age and estimated harvest period.
@@ -68,6 +85,8 @@ The `Time-slider` gives the ability to visualise where forest harvesting is like
 
 ## Sharing
 
+<Image src={shareTool} alt="Application demonstration." sizes="100vw" className="h-auto w-full rounded-sm object-fit bg-zinc-800" />
+
 <Figure src={shareLight} srcDark={shareDark} alt="Share current map via link." />
 
 The `Share` tool gives the ability to quickly share with other users the map view you’re looking at, the selection you’ve made and the layers that are turned on at the time. For example, you can:
@@ -77,8 +96,9 @@ The `Share` tool gives the ability to quickly share with other users the map vie
 - Simply click the share button which copies the link to the clipboard, paste and send to someone.
 - Clicking the link will immediately snap the user to the view you shared.
 
-
 ## Swapping between 2D and 3D mode
+
+<Image src={viewModeTool} alt="Application demonstration." sizes="100vw" className="h-auto w-full rounded-sm object-fit bg-zinc-800" />
 
 <Figure src={viewMode} alt="Switch between 2D and 3D mode." />
 
@@ -86,11 +106,15 @@ Open the toolbar by clicking the little arrow under the tools icon top right. Cl
 
 ## Selecting a feature
 
+<Image src={featureTool} alt="Application demonstration." sizes="100vw" className="h-auto w-full rounded-sm object-fit bg-zinc-800" />
+
 <Figure src={featureLight} srcDark={featureDark} alt="Feature information panel." />
 
 If a feature is clickable on the map, clicking the feature will zoom the viewport to the extent of the feature and show you information about that feature. Some features are not clickable and provide visual context only. 
 
 ## Multi-selection modal
+
+<Image src={multiSelectionTool} alt="Application demonstration." sizes="100vw" className="h-auto w-full rounded-sm object-fit bg-zinc-800" />
 
 <Figure src={multiSelectLight} srcDark={multiSelectDark} alt="Multi select modal." />
 
@@ -98,11 +122,15 @@ When there are several overlapping features, a multi-selection popup will show, 
 
 ## Changing basemaps
 
+<Image src={baseMaps} alt="Application demonstration." sizes="100vw" className="h-auto w-full rounded-sm object-fit bg-zinc-800" />
+
 <Figure src={layersControl} alt="Toggle layers from the layers menu." />
 
 Click the `Layers` icon top right > expand the `Basemaps` layer group > Choose one of the four available basemaps.
 
 ## Toggling layers
+
+<Image src={layersTool} alt="Application demonstration." sizes="100vw" className="h-auto w-full rounded-sm object-fit bg-zinc-800" />
 
 <Figure src={layersButton} srcDark={layersButton} alt="Toggle layers from the layers menu." />
 
@@ -110,13 +138,19 @@ Click the `Layers` icon top right to expand the layers menu. You can toggle a la
 
 ## Rotating the map
 
+<Image src={rotateTool} alt="Application demonstration." sizes="100vw" className="h-auto w-full rounded-sm object-fit bg-zinc-800" />
+
 Right click and drag the map to rotate it. In 3D mode right click and drag up or down to change the tilt of the map or drag right to left to rotate it. 
 
 ## Zooming in and out
 
+<Image src={zoomTool} alt="Application demonstration." sizes="100vw" className="h-auto w-full rounded-sm object-fit bg-zinc-800" />
+
 Use the scroll wheel on your mouse, or the trackpad on your laptop, to zoom in and out. You can also double click the map to zoom in, or hold `shift` and double click to zoom out.
 
 ## Measuring an area
+
+<Image src={measurePolygonTool} alt="Application demonstration." sizes="100vw" className="h-auto w-full rounded-sm object-fit bg-zinc-800" />
 
 <Figure src={measureAreaLight} srcDark={measureAreaDark} alt="Measure an area on the map." />
 
@@ -124,11 +158,15 @@ Users can measure an area by clicking the `Measure Area` tool > Clicking on the 
 
 ## Measuring a distance
 
+<Image src={measureDistanceTool} alt="Application demonstration." sizes="100vw" className="h-auto w-full rounded-sm object-fit bg-zinc-800" />
+
 <Figure src={measureLight} srcDark={measureDark} alt="Measure a distance on the map." />
 
 Users can measure a distance by clicking the `Measure Line` tool > Clicking on the map and drawing a path for what to measure. When you’re finished > double click to complete the line. A popup will appear with your measurements.
 
 ## Measuring an elevation profile along a line
+
+<Image src={measureElevationTool} alt="Application demonstration." sizes="100vw" className="h-auto w-full rounded-sm object-fit bg-zinc-800" />
 
 <Figure src={elevationLight} srcDark={elevationDark} alt="Measure an elevation on the map." />
 
