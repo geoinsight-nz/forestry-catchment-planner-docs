@@ -121,7 +121,11 @@ export function List({ children }: { children: React.ReactNode }) {
 }
 
 export function ListItem({ children }: { children: React.ReactNode }) {
-  return <span className="m-0 h-fit w-auto px-2 py-0">{children}</span>
+  return (
+    <span className="m-0 h-fit w-auto hyphens-auto break-words px-2 py-0">
+      {children}
+    </span>
+  )
 }
 
 export function Properties({ children }: { children: React.ReactNode }) {
