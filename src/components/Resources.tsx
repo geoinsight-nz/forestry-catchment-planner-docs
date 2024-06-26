@@ -1,19 +1,18 @@
 'use client'
 
-import Link from 'next/link'
 import {
   type MotionValue,
   motion,
   useMotionTemplate,
   useMotionValue,
 } from 'framer-motion'
+import Link from 'next/link'
 
 import { GridPattern } from '@/components/GridPattern'
 import { Heading } from '@/components/Heading'
 import { ClipboardIcon } from '@/components/icons/ClipboardIcon'
 import { EnvelopeIcon } from '@/components/icons/EnvelopeIcon'
 import { PaperClipIcon } from '@/components/icons/PaperClipIcon'
-import { UserIcon } from '@/components/icons/UserIcon'
 import { UsersIcon } from '@/components/icons/UsersIcon'
 
 interface Resource {
@@ -29,17 +28,13 @@ interface Resource {
 
 const resources: Array<Resource> = [
   {
-    href: 'mailto:info@geoinsight.co.nz',
-    name: 'Contact',
-    description:
-      'Contact GeoInsight with feedback or questions about the web application tool.',
-    icon: EnvelopeIcon,
+    href: '/partners',
+    name: 'Partners',
+    description: 'Access links to the parties involved in the project.',
+    icon: UsersIcon,
     pattern: {
-      y: 16,
-      squares: [
-        [0, 1],
-        [1, 3],
-      ],
+      y: 22,
+      squares: [[0, 1]],
     },
   },
   {
@@ -57,6 +52,20 @@ const resources: Array<Resource> = [
     },
   },
   {
+    href: 'mailto:info@geoinsight.co.nz',
+    name: 'Contact',
+    description:
+      'Contact GeoInsight with feedback or questions about the web application tool.',
+    icon: EnvelopeIcon,
+    pattern: {
+      y: 16,
+      squares: [
+        [0, 1],
+        [1, 3],
+      ],
+    },
+  },
+  {
     href: '/links',
     name: 'Links',
     description: 'Find links to further reference material on the topic.',
@@ -67,16 +76,6 @@ const resources: Array<Resource> = [
         [0, 2],
         [1, 4],
       ],
-    },
-  },
-  {
-    href: '/partners',
-    name: 'Partners',
-    description: 'Access links to the parties involved in the project.',
-    icon: UsersIcon,
-    pattern: {
-      y: 22,
-      squares: [[0, 1]],
     },
   },
 ]

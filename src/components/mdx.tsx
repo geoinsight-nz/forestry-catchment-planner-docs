@@ -2,7 +2,6 @@ import clsx from 'clsx'
 import Image, { ImageProps } from 'next/image'
 import Link from 'next/link'
 
-import { Feedback } from '@/components/Feedback'
 import { Heading } from '@/components/Heading'
 import { Prose } from '@/components/Prose'
 import { Children } from 'react'
@@ -66,7 +65,7 @@ export function Note({ children }: { children: React.ReactNode }) {
 
 export function Center({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-nowrap items-center justify-center w-full max-w-5xl">
+    <div className="flex w-full max-w-5xl flex-nowrap items-center justify-center">
       {children}
     </div>
   )
@@ -108,7 +107,7 @@ export function List({ children }: { children: React.ReactNode }) {
       {Children.map(children, (child, childIndex) => (
         <li
           className={clsx(
-            'm-0 flex items-center p-0 break-before-auto text-sm text-zinc-600 transition ui-not-focus-visible:outline-none dark:border-zinc-800 dark:text-zinc-400',
+            'm-0 flex break-before-auto items-center p-0 text-sm text-zinc-600 transition ui-not-focus-visible:outline-none dark:border-zinc-800 dark:text-zinc-400',
             childIndex % 2 === 0
               ? 'bg-zinc-100 dark:bg-transparent'
               : 'bg-transparent dark:bg-white/2.5',
@@ -122,7 +121,7 @@ export function List({ children }: { children: React.ReactNode }) {
 }
 
 export function ListItem({ children }: { children: React.ReactNode }) {
-  return <span className="h-fit w-auto m-0 py-0 px-2">{children}</span>
+  return <span className="m-0 h-fit w-auto px-2 py-0">{children}</span>
 }
 
 export function Properties({ children }: { children: React.ReactNode }) {
@@ -142,17 +141,25 @@ export function Property({
   name,
   children,
   type,
+  link,
 }: {
   name: string
   children: React.ReactNode
   type?: string
+  link?: string
 }) {
   return (
     <li className="m-0 px-0 py-4 first:pt-0 last:pb-0">
       <dl className="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
         <dt className="sr-only">Name</dt>
         <dd>
-          <code>{name}</code>
+          {link ? (
+            <a href={link} target="_blank" rel="noopener">
+              <code>{name}</code>
+            </a>
+          ) : (
+            <code>{name}</code>
+          )}
         </dd>
         {type && (
           <>
