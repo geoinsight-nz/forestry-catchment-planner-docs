@@ -39,11 +39,11 @@ const colorStyles = {
 }
 
 const valueColorMap = {
-  GET: 'emerald',
-  POST: 'sky',
-  PUT: 'amber',
-  DELETE: 'rose',
-  NEUTRAL: 'brand',
+    GEOINSIGHT: 'brand',
+    INDUFOR: 'sky',
+    GNS: 'amber',
+    UC: 'rose',
+    OTHER: 'emerald',
 } as Record<string, keyof typeof colorStyles>
 
 export function Tag({
