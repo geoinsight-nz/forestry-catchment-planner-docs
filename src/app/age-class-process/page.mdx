@@ -20,7 +20,7 @@ export const sections = [
   { title: 'Example output', id: 'example-output' },
 ]
 
-# Age class process 
+# Age Class Process 
 
 Age class process detects forest stand age in order to predict when clearfell harvesting will happen at any time in the future. {{ className: 'lead' }}
 
@@ -36,19 +36,19 @@ The accuracy of the age class predictions was assessed by reviewing the Landsat 
 
 ***
 
-## North Island results
+## North Island Results
 
 The combined accuracy of the Gisborne and Hawkes Bay regions was 71% within a year, 83% within two and 87% within three, after post-processing was applied. Notably, the estimates based on harvest detection (Hansen V1.10 and Sentinel-2) were more accurate than the LiDAR-derived results. 92% of points estimated using Hansen or Sentinel-2 were within a year, while this dropped to 41% for LiDAR, though 75% of LiDAR points were within three years. The split between the two sources was relatively even, with 59% using Hansen and Sentinel and 41% using LiDAR.
 
 <Figure src={northIsland} alt="North Island age accuracy." />
 
-## South Island results
+## South Island Results
 
 The combined accuracy of the Nelson, Marlborough and Tasman regions was 86% within a year, 93% within two and 94% within three, after post-processing was applied. The improvement relative to the North Island results was due to the greater proportion of results that we estimated using Hansen and Sentinel-2 (which had a similarly higher degree of accuracy compared to the LiDAR-derived results as the North Island) which thus improved the overall accuracy. About 80% of the QC points were estimated with this data, while the remaining 20% were classified using LiDAR. This difference in proportions likely highlights the younger resource age in these regions, resulting in a greater number of features having a change post 2000 which was then captured by the satellite imagery based data sources.
 
 <Figure src={southIsland} alt="South Island age accuracy." />
 
-## Example output
+## Example Output
 
 An example of the final output for the South Island with a Sentinel-2 basemap. Of note are the recent plantings, which are generally captured with Hansen and Sentinel-2, and the earlier, pre-2000 areas which were estimated using LiDAR. Where there are clear edges between harvest and remaining mature forest, the internal boundaries can be quite accurate despite the generalisation and smoothing processes that were applied.
 

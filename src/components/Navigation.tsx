@@ -244,21 +244,21 @@ export const navigation: Array<NavGroup> = [
   {
     title: 'Methodology',
     links: [
-      { title: 'Plantation forests', href: '/plantation-forests' },
-      { title: 'Age class process', href: '/age-class-process' },
+      { title: 'Plantation Forests', href: '/plantation-forests' },
+      { title: 'Age Class Process', href: '/age-class-process' },
       { title: 'Clearfelling', href: '/clearfelling' },
-      { title: 'Depositional zones', href: '/depositional-zones' },
+      { title: 'Depositional Zones', href: '/depositional-zones' },
       {
         title: 'Catchment Management Units',
         href: '/catchment-management-units',
       },
-      { title: 'Stream orders', href: '/stream-orders' },
+      { title: 'Stream Orders', href: '/stream-orders' },
       {
         title: 'River Environment Classification',
         href: '/rec',
       },
       {
-        title: 'Erosion susceptibility',
+        title: 'Erosion Susceptibility',
         href: '/erosion-susceptibility',
       },
       {
@@ -270,7 +270,7 @@ export const navigation: Array<NavGroup> = [
         href: '/analysis',
       },
       {
-        title: 'Melton ratio',
+        title: 'Melton Ratio',
         href: '/melton-ratio',
       },
       {
@@ -292,7 +292,7 @@ export const navigation: Array<NavGroup> = [
     title: 'Data',
     links: [
       {
-        title: 'Forestry stand calculations',
+        title: 'Forestry Stand Calculations',
         href: '/forestry-stand-calculations-data',
       },
       {
