@@ -7,7 +7,6 @@ import { useEffect, useRef } from 'react'
 import { useSectionStore } from '@/components/SectionProvider'
 import { Tag } from '@/components/Tag'
 import { remToPx } from '@/lib/remToPx'
-import { PyramidIcon } from './icons/PyramidIcon'
 
 function AnchorIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -62,9 +61,7 @@ function Anchor({
           </div>
         </div>
       )}
-      <div className="flex gap-2">
-        {children}
-      </div>
+      <div className="flex gap-2">{children}</div>
     </Link>
   )
 }

@@ -97,7 +97,7 @@ export const Header = forwardRef<
           <ThemeToggle />
         </div>
         <div className="hidden min-[416px]:contents">
-          <Button href="https://catchment.staging.maphq.co.nz/">
+          <Button href="https://catchment.maphq.co.nz">
             Open app
           </Button>
         </div>
