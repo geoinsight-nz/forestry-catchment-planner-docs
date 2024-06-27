@@ -5,6 +5,7 @@ import ageClassProcessDark from './indufor_classification_process_dark.png'
 import northIsland from './age_class_north_island.png'
 import southIsland from './age_class_south_island.png'
 import output from './output_example.png'
+import { AttributionHeading } from '@/components/Heading'
 
 export const metadata = {
   title: 'Age class process',
@@ -18,8 +19,6 @@ export const sections = [
   { title: 'South Island results', id: 'south-island-results' },
   { title: 'Example output', id: 'example-output' },
 ]
-
-## {{ tag: 'INDUFOR', label: 'Author' }}
 
 # Age class process 
 
@@ -54,3 +53,7 @@ The combined accuracy of the Nelson, Marlborough and Tasman regions was 86% with
 An example of the final output for the South Island with a Sentinel-2 basemap. Of note are the recent plantings, which are generally captured with Hansen and Sentinel-2, and the earlier, pre-2000 areas which were estimated using LiDAR. Where there are clear edges between harvest and remaining mature forest, the internal boundaries can be quite accurate despite the generalisation and smoothing processes that were applied.
 
 <Figure src={output} alt="Early output example visualisation for the South Island." caption="Contains modified Copernicus Sentinel data 2023, processed in Google Earth Engine." />
+
+<Author>
+    Indufor
+</Author>

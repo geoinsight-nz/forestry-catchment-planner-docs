@@ -1,11 +1,11 @@
 import clsx from 'clsx'
 
-const variantStyles = {
+export const variantStyles = {
   small: '',
   medium: 'rounded-lg px-1.5 ring-1 ring-inset',
 }
 
-const colorStyles = {
+export const colorStyles = {
   emerald: {
     small: 'text-emerald-500 dark:text-emerald-400',
     medium:
@@ -38,7 +38,7 @@ const colorStyles = {
   },
 }
 
-const valueColorMap = {
+export const valueColorMap = {
     GEOINSIGHT: 'brand',
     INDUFOR: 'sky',
     GNS: 'amber',
