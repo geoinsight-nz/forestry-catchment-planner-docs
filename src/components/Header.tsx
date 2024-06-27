@@ -75,9 +75,10 @@ export const Header = forwardRef<
         <Link
           href="/"
           aria-label="Home"
-          className="h-6 text-sm text-black dark:text-white"
+          className="h-6 text-sm text-black dark:text-white flex gap-6"
         >
-          FCP
+            <BrandIcon className="h-6 w-6" />
+            FCP
         </Link>
       </div>
       <div className="flex items-center gap-5">

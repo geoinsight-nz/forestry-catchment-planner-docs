@@ -5,14 +5,9 @@ import Link from 'next/link'
 import { useEffect, useRef } from 'react'
 
 import { useSectionStore } from '@/components/SectionProvider'
-import {
-  colorStyles,
-  Tag,
-  valueColorMap,
-  variantStyles,
-} from '@/components/Tag'
+import { Tag } from '@/components/Tag'
 import { remToPx } from '@/lib/remToPx'
-import clsx from 'clsx'
+import { PyramidIcon } from './icons/PyramidIcon'
 
 function AnchorIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -67,7 +62,9 @@ function Anchor({
           </div>
         </div>
       )}
-      {children}
+      <div className="flex gap-2">
+        {children}
+      </div>
     </Link>
   )
 }
