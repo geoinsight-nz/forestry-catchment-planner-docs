@@ -1,4 +1,4 @@
-export function SplitIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+export function ContactIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,13 +10,11 @@ export function SplitIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-      className="lucide lucide-split"
+      className="lucide lucide-send"
       {...props}
     >
-      <path d="M16 3h5v5" />
-      <path d="M8 3H3v5" />
-      <path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" />
-      <path d="m15 9 6-6" />
+      <path d="m22 2-7 20-4-9-9-4Z" />
+      <path d="M22 2 11 13" />
     </svg>
   )
 }
