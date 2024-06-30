@@ -14,6 +14,29 @@ export const metadata: Metadata = {
     template: '%s - Forestry Catchment Planner Documentation',
     default: 'Forestry Catchment Planner Documentation',
   },
+  openGraph: {
+    title: 'Forestry Catchment Planner',
+    url: 'https://www.docs.forestrycatchmentplanner.nz',
+    siteName: 'Forestry Catchment Planner',
+    locale: 'en_US',
+    type: 'website',
+    images: [
+      {
+        url: `https://www.docs.forestrycatchmentplanner.nz/opengraph-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: 'Forestry Catchment Planner',
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 }
 
 const inter = Inter({
