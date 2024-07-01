@@ -239,6 +239,7 @@ export const navigation: Array<NavGroup> = [
       { title: 'Glossary', href: '/glossary' },
       { title: 'Links', href: '/links' },
       { title: 'Partners', href: '/partners' },
+      { title: 'Case Study', href: '/case-study' },
     ],
   },
   {
