@@ -11,20 +11,27 @@ import {
 } from '@/components/MobileNavigation'
 import { MobileSearch, Search } from '@/components/Search'
 import { ThemeToggle } from '@/components/ThemeToggle'
+import { cn } from '@/lib/utils'
 import BrandIcon from './icons/BrandIcon'
+import { ExternalLinkIcon } from './icons/ExternalLinkIcon'
 
 function TopLevelNavItem({
   href,
   children,
+  className,
 }: {
   href: string
   children: React.ReactNode
+  className?: string
 }) {
   return (
     <li>
       <Link
         href={href}
-        className="text-sm leading-5 text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+        className={cn(
+          className,
+          'text-sm leading-5 text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white',
+        )}
       >
         {children}
       </Link>
@@ -75,10 +82,10 @@ export const Header = forwardRef<
         <Link
           href="/"
           aria-label="Home"
-          className="h-6 text-sm text-black dark:text-white flex gap-6"
+          className="flex h-6 gap-6 text-sm text-black dark:text-white"
         >
-            <BrandIcon className="h-6 w-6" />
-            FCP
+          <BrandIcon className="h-6 w-6" />
+          FCP
         </Link>
       </div>
       <div className="flex items-center gap-5">
@@ -88,8 +95,16 @@ export const Header = forwardRef<
             <TopLevelNavItem href="/plantation-forests">
               Methodology
             </TopLevelNavItem>
-            <TopLevelNavItem href="/quickstart">Tool</TopLevelNavItem>
-            <TopLevelNavItem href="https://www.forestrycatchmentplanner.nz">Overview</TopLevelNavItem>
+            <TopLevelNavItem href="/quickstart">Guides</TopLevelNavItem>
+            <TopLevelNavItem
+              href="https://www.forestrycatchmentplanner.nz"
+              className="group inline-flex items-center gap-2"
+            >
+              Overview
+              <span className="text-sm">
+                <ExternalLinkIcon className="text-zinc-600 transition group-hover:text-zinc-900 dark:text-zinc-400 dark:group-hover:text-white" />
+              </span>
+            </TopLevelNavItem>
           </ul>
         </nav>
         <div className="hidden md:block md:h-5 md:w-px md:bg-zinc-900/10 md:dark:bg-white/15" />
@@ -98,8 +113,14 @@ export const Header = forwardRef<
           <ThemeToggle />
         </div>
         <div className="hidden min-[416px]:contents">
-          <Button href="https://catchment.maphq.co.nz">
+          <Button
+            href="https://catchment.maphq.co.nz"
+            className="group inline-flex items-center gap-2"
+          >
             Open app
+            <span className="text-sm">
+              <ExternalLinkIcon className="text-white dark:text-brand-400 dark:group-hover:text-brand-300" />
+            </span>
           </Button>
         </div>
       </div>

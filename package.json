@@ -55,6 +55,7 @@
   "devDependencies": {
     "eslint": "^8.56.0",
     "eslint-config-next": "^14.0.4",
+    "next-export-optimize-images": "^4.5.0",
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "sharp": "0.33.1",
