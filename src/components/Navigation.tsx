@@ -317,6 +317,7 @@ export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {
           Methodology
         </TopLevelNavItem>
         <TopLevelNavItem href="/interface">Tool</TopLevelNavItem>
+        <TopLevelNavItem href="https://www.forestrycatchmentplanner.nz">Overview</TopLevelNavItem>
         {navigation.map((group, groupIndex) => (
           <NavigationGroup
             key={group.title}
