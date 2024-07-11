@@ -4,6 +4,12 @@ Discover how the Forestry Catchment Planner can transform your approach to fores
 
 The FCP documentation uses Protocol from [Tailwind UI](https://tailwindui.com) built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
 
+## Forestry Catchment Planner
+
+Visit the Forestry Catchment Planner [GitHub repo](https://github.com/henrybabbage/forestry-catchment-planner)
+
+Visit the Forestry Catchment Planner [website](https://www.forestrycatchmentplanner.nz/)
+
 ## Getting started
 
 To get started with this template, first install the npm dependencies:
