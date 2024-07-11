@@ -12,6 +12,7 @@ import { TreePineIcon } from './icons/TreePineIcon'
 type FigureProps = {
   caption?: string
   srcDark?: string
+  zoom?: boolean
 } & ImageProps
 
 function UnZoomButton() {
@@ -22,7 +23,7 @@ function ZoomButton() {
   return <SizeIcon className="size-6 text-brand-900 hover:text-brand-500" />
 }
 
-export function Figure({ src, srcDark, ...props }: FigureProps) {
+export function Figure({ src, srcDark, zoom = true, ...props }: FigureProps) {
   const [isDarkMode, setIsDarkMode] = useState(false)
 
   useEffect(() => {
@@ -44,7 +45,18 @@ export function Figure({ src, srcDark, ...props }: FigureProps) {
 
   return (
     <figure className="relative">
-      <Zoom IconUnzoom={UnZoomButton} IconZoom={ZoomButton}>
+      {zoom ? (
+        <Zoom IconUnzoom={UnZoomButton} IconZoom={ZoomButton}>
+          <Image
+            src={imageSrc}
+            sizes="100vw"
+            className="h-full w-full rounded-sm"
+            placeholder="blur"
+            {...props}
+            alt={props.alt || ''}
+          />
+        </Zoom>
+      ) : (
         <Image
           src={imageSrc}
           sizes="100vw"
@@ -53,7 +65,7 @@ export function Figure({ src, srcDark, ...props }: FigureProps) {
           {...props}
           alt={props.alt || ''}
         />
-      </Zoom>
+      )}
       {props.caption && (
         <>
           <TreePineIcon className="size-5 stroke-[1px] align-baseline text-zinc-600 dark:text-zinc-400" />
