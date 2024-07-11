@@ -1,4 +1,5 @@
-import Image, { ImageProps } from 'next/image'
+import Image from 'next-export-optimize-images/image'
+import { type ImageProps } from 'next/image'
 
 type GalleryImage = {
   caption?: string
@@ -12,7 +13,10 @@ export function Gallery({ images }: GalleryProps) {
   return (
     <div className="flex flex-wrap gap-x-4">
       {images.map((image, index) => (
-        <figure key={index} className="relative flex flex-col items-start max-w-60">
+        <figure
+          key={index}
+          className="relative flex max-w-60 flex-col items-start"
+        >
           <Image
             src={image.src}
             alt={image.alt}

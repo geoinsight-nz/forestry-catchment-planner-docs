@@ -1,5 +1,6 @@
 import clsx from 'clsx'
-import Image, { ImageProps } from 'next/image'
+import Image from 'next-export-optimize-images/image'
+import { type ImageProps } from 'next/image'
 import Link from 'next/link'
 
 import { Heading } from '@/components/Heading'

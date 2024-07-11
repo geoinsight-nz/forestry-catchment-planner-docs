@@ -1,7 +1,8 @@
 'use client'
 
 import '@/styles/react-medium-image-zoom.css'
-import Image, { ImageProps } from 'next/image'
+import Image from 'next-export-optimize-images/image'
+import { type ImageProps } from 'next/image'
 import { useEffect, useState } from 'react'
 import Zoom from 'react-medium-image-zoom'
 import { CloseIcon } from './icons/CloseIcon'
@@ -54,12 +55,14 @@ export function Figure({ src, srcDark, ...props }: FigureProps) {
         />
       </Zoom>
       {props.caption && (
-        <div className="my-2 flex gap-4">
+        <>
           <TreePineIcon className="size-5 stroke-[1px] align-baseline text-zinc-600 dark:text-zinc-400" />
-          <figcaption className="!m-0 h-6 !p-0 text-sm text-zinc-600 dark:text-zinc-400">
-            {props.caption}
-          </figcaption>
-        </div>
+          <div className="my-2">
+            <figcaption className="!m-0 h-6 !p-0 text-sm text-zinc-600 dark:text-zinc-400">
+              {props.caption}
+            </figcaption>
+          </div>
+        </>
       )}
     </figure>
   )

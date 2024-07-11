@@ -1,4 +1,5 @@
 import { withNextVideo } from "next-video/process";
+import withExportImages from 'next-export-optimize-images'
 import nextMDX from '@next/mdx'
 
 import { recmaPlugins } from './src/mdx/recma.mjs'
@@ -15,10 +16,10 @@ const withMDX = nextMDX({
 })
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig = await withExportImages({
   output: 'export',
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
-  images: { unoptimized: true, domains: ['github.com'] },
-}
+  images: { domains: ['github.com'] },
+})
 
 export default withNextVideo(withSearch(withMDX(nextConfig)));
