@@ -246,9 +246,6 @@ export const navigation: Array<NavGroup> = [
       { title: 'Links', href: '/links' },
       { title: 'Partners', href: '/partners' },
       { title: 'Case Study', href: '/case-study' },
-      { title: 'Tangata Whenua', href: '/tangata-whenua' },
-      { title: 'Regional Councils', href: '/regional-councils' },
-      { title: 'Forestry Industry', href: '/forestry-industry' },
     ],
   },
   {
