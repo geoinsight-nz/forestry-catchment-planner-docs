@@ -3,12 +3,10 @@
 import '@/styles/react-medium-image-zoom.css'
 import Image from 'next-export-optimize-images/image'
 import { type ImageProps } from 'next/image'
-import { useEffect, useState } from 'react'
 import Zoom from 'react-medium-image-zoom'
 import { CloseIcon } from './icons/CloseIcon'
 import { SizeIcon } from './icons/SizeIcon'
 import { TreePineIcon } from './icons/TreePineIcon'
-import { useTheme } from 'next-themes'
 
 type FigureProps = {
   caption?: string
@@ -25,43 +23,56 @@ function ZoomButton() {
 }
 
 export function Figure({ src, srcDark, zoom = true, ...props }: FigureProps) {
-  const { resolvedTheme } = useTheme()
-  let imageSrc
-
-  switch (resolvedTheme) {
-    case 'light':
-      imageSrc = {src}
-      break
-    case 'dark':
-      imageSrc = {srcDark}
-      break
-    default:
-      imageSrc = {src}
-      break
-  }
-
   return (
     <figure className="relative">
       {zoom ? (
         <Zoom IconUnzoom={UnZoomButton} IconZoom={ZoomButton}>
-          <Image
-            src={imageSrc}
-            sizes="100vw"
-            className="h-full w-full rounded-sm"
-            placeholder="blur"
-            {...props}
-            alt={props.alt || ''}
-          />
+          <>
+            <div data-hide-on-theme="dark">
+              <Image
+                src={src}
+                sizes="100vw"
+                className="h-full w-full rounded-sm"
+                placeholder="blur"
+                {...props}
+                alt={props.alt || ''}
+              />
+            </div>
+            <div data-hide-on-theme="light">
+              <Image
+                src={srcDark ?? src}
+                sizes="100vw"
+                className="h-full w-full rounded-sm"
+                placeholder="blur"
+                {...props}
+                alt={props.alt || ''}
+              />
+            </div>
+          </>
         </Zoom>
       ) : (
-        <Image
-          src={imageSrc}
-          sizes="100vw"
-          className="h-full w-full rounded-sm"
-          placeholder="blur"
-          {...props}
-          alt={props.alt || ''}
-        />
+        <>
+          <div data-hide-on-theme="dark">
+            <Image
+              src={src}
+              sizes="100vw"
+              className="h-full w-full rounded-sm"
+              placeholder="blur"
+              {...props}
+              alt={props.alt || ''}
+            />
+          </div>
+          <div data-hide-on-theme="light">
+            <Image
+              src={srcDark ?? src}
+              sizes="100vw"
+              className="h-full w-full rounded-sm"
+              placeholder="blur"
+              {...props}
+              alt={props.alt || ''}
+            />
+          </div>
+        </>
       )}
       {props.caption && (
         <>

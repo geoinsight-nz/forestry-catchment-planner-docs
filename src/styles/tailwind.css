@@ -14,6 +14,11 @@
   [inert] ::-webkit-scrollbar {
     display: none;
   }
+
+  [data-theme='dark'] [data-hide-on-theme='dark'],
+  [data-theme='light'] [data-hide-on-theme='light'] {
+    display: none;
+  }
 }
 
 @tailwind base;
