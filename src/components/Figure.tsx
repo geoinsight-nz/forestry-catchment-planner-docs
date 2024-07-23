@@ -8,6 +8,7 @@ import Zoom from 'react-medium-image-zoom'
 import { CloseIcon } from './icons/CloseIcon'
 import { SizeIcon } from './icons/SizeIcon'
 import { TreePineIcon } from './icons/TreePineIcon'
+import { useTheme } from 'next-themes'
 
 type FigureProps = {
   caption?: string
@@ -24,24 +25,21 @@ function ZoomButton() {
 }
 
 export function Figure({ src, srcDark, zoom = true, ...props }: FigureProps) {
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const { resolvedTheme } = useTheme()
+  let imageSrc
 
-  useEffect(() => {
-    const matchDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
-    setIsDarkMode(matchDarkMode.matches)
-
-    const handleChange = (e: MediaQueryListEvent) => {
-      setIsDarkMode(e.matches)
-    }
-
-    matchDarkMode.addEventListener('change', handleChange)
-
-    return () => {
-      matchDarkMode.removeEventListener('change', handleChange)
-    }
-  }, [])
-
-  const imageSrc = srcDark && isDarkMode ? srcDark : src
+  switch (resolvedTheme) {
+    case 'light':
+      imageSrc = {src}
+      break
+    case 'dark':
+      imageSrc = {srcDark}
+      break
+    default:
+      imageSrc =
+        'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+      break
+  }
 
   return (
     <figure className="relative">
