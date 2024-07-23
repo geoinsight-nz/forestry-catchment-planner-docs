@@ -36,8 +36,7 @@ export function Figure({ src, srcDark, zoom = true, ...props }: FigureProps) {
       imageSrc = {srcDark}
       break
     default:
-      imageSrc =
-        'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+      imageSrc = {src}
       break
   }
 
