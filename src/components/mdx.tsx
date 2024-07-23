@@ -84,6 +84,26 @@ export function Center({ children }: { children: React.ReactNode }) {
   )
 }
 
+export function Grid({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="grid grid-cols-1 items-start gap-x-16 gap-y-10 md:max-w-none md:grid-cols-2">
+      {children}
+    </div>
+  )
+}
+
+export function ColumnLeft({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="h-full col-start-1 col-end-2 flex flex-col items-center justify-center gap-y-8">{children}</div>
+  )
+}
+
+export function ColumnRight({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="h-full col-start-2 col-end-3 flex flex-col items-center justify-center gap-y-8">{children}</div>
+  )
+}
+
 export function Row({ children }: { children: React.ReactNode }) {
   return (
     <div className="grid grid-cols-1 items-start gap-x-16 gap-y-10 xl:max-w-none xl:grid-cols-2">
@@ -109,6 +129,12 @@ export function Col({
       {children}
     </div>
   )
+}
+
+export function Container({ children }: { children: React.ReactNode }) {
+    return (
+        <div className="max-w-xs w-48 h-auto">{children}</div>
+    )
 }
 
 export function List({ children }: { children: React.ReactNode }) {
