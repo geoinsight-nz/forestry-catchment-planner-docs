@@ -28,7 +28,7 @@ export function Figure({ src, srcDark, zoom = true, ...props }: FigureProps) {
       {zoom ? (
         <Zoom IconUnzoom={UnZoomButton} IconZoom={ZoomButton}>
           <>
-            <div data-hide-on-theme="dark">
+            <div data-hide-on-theme="dark" className="dark:hidden">
               <Image
                 src={src}
                 sizes="100vw"
@@ -38,7 +38,7 @@ export function Figure({ src, srcDark, zoom = true, ...props }: FigureProps) {
                 alt={props.alt || ''}
               />
             </div>
-            <div data-hide-on-theme="light">
+            <div data-hide-on-theme="light" className="hidden dark:block">
               <Image
                 src={srcDark ?? src}
                 sizes="100vw"
@@ -52,7 +52,7 @@ export function Figure({ src, srcDark, zoom = true, ...props }: FigureProps) {
         </Zoom>
       ) : (
         <>
-          <div data-hide-on-theme="dark">
+          <div data-hide-on-theme="dark" className="dark:hidden">
             <Image
               src={src}
               sizes="100vw"
@@ -62,7 +62,7 @@ export function Figure({ src, srcDark, zoom = true, ...props }: FigureProps) {
               alt={props.alt || ''}
             />
           </div>
-          <div data-hide-on-theme="light">
+          <div data-hide-on-theme="light" className="hidden dark:block">
             <Image
               src={srcDark ?? src}
               sizes="100vw"

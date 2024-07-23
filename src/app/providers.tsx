@@ -1,10 +1,11 @@
 'use client'
 
-import { useEffect } from 'react'
 import { ThemeProvider, useTheme } from 'next-themes'
+import { useEffect } from 'react'
 
 function ThemeWatcher() {
   let { resolvedTheme, setTheme } = useTheme()
+  console.log(resolvedTheme)
 
   useEffect(() => {
     let media = window.matchMedia('(prefers-color-scheme: dark)')
