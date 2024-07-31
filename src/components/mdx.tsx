@@ -94,13 +94,13 @@ export function Grid({ children }: { children: React.ReactNode }) {
 
 export function ColumnLeft({ children }: { children: React.ReactNode }) {
   return (
-    <div className="h-full col-start-1 col-end-2 flex flex-col items-center justify-center gap-y-8">{children}</div>
+    <div className="h-full col-start-1 col-end-2 md:col-end-2 flex flex-col items-center justify-center gap-y-8">{children}</div>
   )
 }
 
 export function ColumnRight({ children }: { children: React.ReactNode }) {
   return (
-    <div className="h-full col-start-2 col-end-3 flex flex-col items-center justify-center gap-y-8">{children}</div>
+    <div className="h-full col-start-1 col-end-2 md:col-start-2 md:col-end-3 flex flex-col items-center justify-center gap-y-8">{children}</div>
   )
 }
 
