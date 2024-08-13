@@ -91,11 +91,11 @@ export const Header = forwardRef<
       <div className="flex items-center gap-5">
         <nav className="hidden md:block">
           <ul role="list" className="flex items-center gap-8">
-            <TopLevelNavItem href="/">Science</TopLevelNavItem>
-            <TopLevelNavItem href="/plantation-forests">
+            <TopLevelNavItem href="/" className="hidden xl:block">Science</TopLevelNavItem>
+            <TopLevelNavItem href="/plantation-forests" className="hidden xl:block">
               Methodology
             </TopLevelNavItem>
-            <TopLevelNavItem href="/quickstart">Guides</TopLevelNavItem>
+            <TopLevelNavItem href="/quickstart" className="hidden xl:block">Guides</TopLevelNavItem>
             <TopLevelNavItem
               href="https://www.forestrycatchmentplanner.nz"
               className="group inline-flex items-center gap-2"
